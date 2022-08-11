@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* font-family: 'Poppins', sans-serif; */
+
+.LoginPage {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.LoginPage .LoginPageForm {
+  border: 1px solid magenta;
+  max-width: 550px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  /* padding: 140px 0 40px; */
+}
+
+.LoginPage .heading {
+  margin: 0;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+  color: #525252;
+}
+
+.LoginPage .subheading {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #525252;
+}

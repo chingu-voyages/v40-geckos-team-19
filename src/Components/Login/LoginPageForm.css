@@ -1,0 +1,10 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label,
+.login-form input {
+   display: block;
+}
+
