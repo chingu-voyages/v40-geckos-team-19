@@ -12,7 +12,7 @@ const LoginPage = () => {
       <div className="LoginPageForm">
         <header>
           <h2 className="heading">Login to your Account</h2>
-          <p className="subheading">Show your artworks and get appreciated</p>
+          <p className="subheading">Show your artwork and get appreciated</p>
         </header>
 
         <LoginPageForm />
@@ -24,7 +24,7 @@ const LoginPage = () => {
          <a href="/"><img src={Twitter} alt="Login with Twitter" /></a> 
         </div>
         <footer className="form-footer">
-          <p>Don't have an account? <a href="/">Sign Up</a></p>
+          <p><span>Don't have an account?</span> <a href="/register">Sign Up</a></p>
         </footer>
       </div>
     </div>
