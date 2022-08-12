@@ -42,3 +42,21 @@
   font-weight: 600;
   color: #A1A1A1;
 }
+
+.signup-social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.signup-social-icons img {
+  max-width: 100%;
+  height: fit-content;
+  border: 1px solid #DADADA;
+  border-radius: 8px;
+  padding: 16px 40px;
+}
+
+.signup-social-icons .google-icon {
+  height: 57px;
+}

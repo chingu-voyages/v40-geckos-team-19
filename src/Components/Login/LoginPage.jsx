@@ -18,8 +18,8 @@ const LoginPage = () => {
         <LoginPageForm />
 
         <p className="or-text">------------- Or ------------- </p>
-        <div className="socialIcons">
-          <img src={Google} alt="Login with Google" />
+        <div className="signup-social-icons">
+          <img src={Google} alt="Login with Google" className="google-icon" />
           <img src={Facebook} alt="Login with Facebook" />
           <img src={Twitter} alt="Login with Twitter" />
         </div>
