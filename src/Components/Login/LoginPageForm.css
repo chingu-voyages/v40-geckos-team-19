@@ -20,7 +20,7 @@
   border: 1px solid black;
   border-radius: 6px;
   padding: 13px 10px 12px;
-  margin: 20px 0;
+  margin: 20px 0 0;
 }
 
 .login-form input {
@@ -57,8 +57,7 @@
 
 .remember-me input {
   width: 30px;
-  margin: 10px 0 10px;
-  justify-self: left;
+  margin: 10px 0 10px -6px;
 }
 
 .form-actions button {
@@ -74,6 +73,7 @@
   cursor: pointer;
 }
 
-.form-actions button:hover,
-.form-actions button:focus {
+.login-help a {
+  color: #1e232c;
+  text-decoration: none;
 }

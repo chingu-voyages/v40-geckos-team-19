@@ -34,3 +34,11 @@
     line-height: 22px;
     color: #525252;
 }
+
+.or-text {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #A1A1A1;
+}

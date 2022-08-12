@@ -10,11 +10,14 @@ const LoginPage = () => {
   return (
     <div className="LoginPage">
       <div className="LoginPageForm">
-        <h2 className="heading">Login to your Account</h2>
-        <p className="subheading">Show your artworks and get appreciated</p>
+        <header>
+          <h2 className="heading">Login to your Account</h2>
+          <p className="subheading">Show your artworks and get appreciated</p>
+        </header>
+
         <LoginPageForm />
 
-        <p>------------- Or ------------- </p>
+        <p className="or-text">------------- Or ------------- </p>
         <div className="socialIcons">
           <img src={Google} alt="Login with Google" />
           <img src={Facebook} alt="Login with Facebook" />
