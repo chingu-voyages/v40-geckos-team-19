@@ -1,15 +1,43 @@
-# Title
+# WeDesign
 
 ## Overview
 
-### Features
+## Features
+<br />
 
-### Running the Project
+## Running the Project
 
-### Dependencies
+### 1. Fork and clone the repository
 
-### Contributors
+Follow [these steps](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to create a fork of this repository and clone it to your local machine.
 
+### 2. Navigate to the repo directory
+
+Once you have cloned the repo by running `git clone v40-geckos-team-19`, the next step would be to move into the cloned repo:
+
+```
+cd v40-geckos-team-19
+```
+
+### 3. Install dependencies
+
+Install npm by running:
+```
+npm install
+```
+
+### 4. Run locally
+
+View the project locally by running:
+```
+npm start
+```
+
+## Dependencies
+
+## Contributors
+<br />
+<hr />
 
 #### voyage-tasks
 
