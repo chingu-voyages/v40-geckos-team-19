@@ -4,7 +4,7 @@ import "./LoginPageForm.css";
 const LoginPageForm = () => {
   return (
     <form action="" className="login-form">
-      <label htmlFor="emailInput">
+      <label htmlFor="email-input">
         Email
         <input type="email" id="email-input" />
       </label>
@@ -13,8 +13,8 @@ const LoginPageForm = () => {
         <input type="password" id="password-input" className="password-input" />
         <div className="login-help">
           <div className="remember-me">
-            <input type="checkbox" value="lsRememberMe" id="remember-me" />{" "}
-            <label for="remember-me">Remember Me</label>
+            <input type="checkbox" id="remember-me" />{" "}
+            <label htmlFor="remember-me">Remember Me</label>
           </div>
           <a href="/">Forgot Password?</a>
         </div>
