@@ -10,13 +10,16 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
-.LoginPage .LoginPageForm {
+.LoginPageForm {
   border: 1px solid magenta;
   max-width: 550px;
   width: 100%;
   display: block;
   margin: 0 auto;
   padding: 40px 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .LoginPage .heading {
@@ -54,9 +57,19 @@
   height: fit-content;
   border: 1px solid #DADADA;
   border-radius: 8px;
-  padding: 16px 40px;
+  padding: 0.7rem 2.5rem;
 }
 
 .signup-social-icons .google-icon {
-  height: 57px;
+  height: 49px;
+}
+
+@media (max-width: 300px) {
+  .signup-social-icons img {
+    padding: 8px 16px;
+  }
+
+  .signup-social-icons .google-icon {
+    height: 45px;
+  }
 }
