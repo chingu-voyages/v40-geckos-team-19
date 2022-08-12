@@ -8,8 +8,7 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
-.LoginPageForm {
-  border: 1px solid magenta;
+.LoginPage .login-form-container {
   max-width: 550px;
   width: 100%;
   display: block;
@@ -20,23 +19,25 @@
   justify-content: space-between;
 }
 
-.LoginPage .heading {
+.LoginPage .heading,
+.LoginPage .subheading {
   margin: 0;
+  color: #525252;
+}
+
+.LoginPage .heading {
   font-weight: 700;
   font-size: 36px;
   line-height: 49px;
-  color: #525252;
 }
 
 .LoginPage .subheading {
-  margin: 0;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
-  color: #525252;
 }
 
-.or-text {
+.LoginPage .or-text {
   margin: 0 0 24px;
   text-align: center;
   font-size: 12px;
@@ -44,13 +45,13 @@
   color: #a1a1a1;
 }
 
-.signup-social-icons {
+.LoginPage .signup-social-icons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.signup-social-icons img {
+.LoginPage .signup-social-icons img {
   max-width: 100%;
   height: fit-content;
   border: 1px solid #dadada;
@@ -58,11 +59,11 @@
   padding: 0.7rem 2.5rem;
 }
 
-.signup-social-icons .google-icon {
+.LoginPage .signup-social-icons .google-icon {
   height: 49px;
 }
 
-.form-footer p {
+.LoginPage .form-footer p {
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -73,21 +74,21 @@
   margin: 4rem 0 0;
 }
 
-.form-footer span {
+.LoginPage .form-footer span {
   opacity: 0.4;
 }
 
-.form-footer a {
+.LoginPage .form-footer a {
   color: #6C70EB;
   text-decoration: none;
 }
 
 @media (max-width: 370px) {
-  .signup-social-icons img {
+  .LoginPage .signup-social-icons img {
     padding: 0.3rem 1rem;
   }
 
-  .signup-social-icons .google-icon {
+  .LoginPage .signup-social-icons .google-icon {
     height: 38px;
   }
 }
