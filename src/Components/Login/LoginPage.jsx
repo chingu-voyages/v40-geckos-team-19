@@ -19,12 +19,12 @@ const LoginPage = () => {
 
         <p className="or-text">------------- Or ------------- </p>
         <div className="signup-social-icons">
-          <img src={Google} alt="Login with Google" className="google-icon" />
-          <img src={Facebook} alt="Login with Facebook" />
-          <img src={Twitter} alt="Login with Twitter" />
+         <a href="/"><img src={Google} alt="Login with Google" className="google-icon" /></a> 
+         <a href="/"><img src={Facebook} alt="Login with Facebook" /></a> 
+         <a href="/"><img src={Twitter} alt="Login with Twitter" /></a> 
         </div>
-        <footer>
-          <p>Don't have an account? Sign Up</p>
+        <footer className="form-footer">
+          <p>Don't have an account? <a href="/">Sign Up</a></p>
         </footer>
       </div>
     </div>

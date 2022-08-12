@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-/* font-family: 'Poppins', sans-serif; */
-
 .LoginPage {
   font-family: "Nunito Sans", sans-serif;
 }
@@ -31,11 +29,11 @@
 }
 
 .LoginPage .subheading {
-    margin: 0;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    color: #525252;
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #525252;
 }
 
 .or-text {
@@ -43,7 +41,7 @@
   text-align: center;
   font-size: 12px;
   font-weight: 600;
-  color: #A1A1A1;
+  color: #a1a1a1;
 }
 
 .signup-social-icons {
@@ -55,7 +53,7 @@
 .signup-social-icons img {
   max-width: 100%;
   height: fit-content;
-  border: 1px solid #DADADA;
+  border: 1px solid #dadada;
   border-radius: 8px;
   padding: 0.7rem 2.5rem;
 }
@@ -64,12 +62,24 @@
   height: 49px;
 }
 
-@media (max-width: 300px) {
+.form-footer p {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  opacity: 0.4;
+  line-height: 21px;
+  text-align: center;
+  margin: 0;
+  color: #040415;
+  margin: 4rem 0 0;
+}
+
+@media (max-width: 370px) {
   .signup-social-icons img {
-    padding: 8px 16px;
+    padding: 0.3rem 1rem;
   }
 
   .signup-social-icons .google-icon {
-    height: 45px;
+    height: 38px;
   }
 }
