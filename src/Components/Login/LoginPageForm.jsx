@@ -1,16 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LoginPageForm.css";
 
 const LoginPageForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log(email, password);
+    setEmail("");
+    setPassword("");
+  };
+
   return (
-    <form action="" className="login-form">
+    <form action="" className="login-form" onSubmit={handleFormSubmit}>
       <label htmlFor="email-input">
         Email
-        <input type="email" id="email-input" />
+        <input
+          type="email"
+          id="email-input"
+          onChange={handleEmailChange}
+          value={email}
+        />
       </label>
       <label htmlFor="password-input">
         Password
-        <input type="password" id="password-input" className="password-input" />
+        <input
+          type="password"
+          id="password-input"
+          className="password-input"
+          onChange={handlePasswordChange}
+          value={password}
+        />
         <div className="login-help">
           <div className="remember-me">
             <input type="checkbox" id="remember-me" />{" "}
