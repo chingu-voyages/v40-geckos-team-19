@@ -1,0 +1,80 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 37px 0 30px;
+}
+
+.login-form label,
+.login-form input {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.login-form label {
+  color: #828282;
+}
+
+.login-form input,
+.login-form button {
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 13px 10px 12px;
+  margin: 20px 0;
+}
+
+.login-form input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+.login-form .password-input {
+  margin-bottom: 0;
+}
+
+.login-help {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-help label,
+.login-help a {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.remember-me {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.remember-me input {
+  width: 30px;
+  margin: 10px 0 10px -6px;
+}
+
+.form-actions button {
+  display: block;
+  width: 100%;
+  color: #ffffff;
+  background-color: #1e232c;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 25px;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.login-help a {
+  color: #1e232c;
+  text-decoration: none;
+}
