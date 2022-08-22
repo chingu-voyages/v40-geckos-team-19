@@ -29,7 +29,7 @@ const RegisterPage = () => {
         </div>
         <footer className="form-footer">
           <p>
-            <span>Don't have an account?</span> <a href="/register">Sign Up</a>
+            <span>Already have an account?</span> <a href="/login">Login</a>
           </p>
         </footer>
       </div>
