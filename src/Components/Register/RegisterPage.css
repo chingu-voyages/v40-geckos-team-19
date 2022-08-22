@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.RegisterPage {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.RegisterPage .register-form-container {
+  max-width: 550px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 40px 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.RegisterPage .heading,
+.RegisterPage .subheading {
+  margin: 0;
+  color: #525252;
+}
+
+.RegisterPage .heading {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+}
+
+.RegisterPage .subheading {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.RegisterPage .or-text {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #a1a1a1;
+}
+
+.RegisterPage .signup-social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.RegisterPage .signup-social-icons img {
+  max-width: 100%;
+  height: fit-content;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+  padding: 0.7rem 2.5rem;
+}
+
+.RegisterPage .signup-social-icons .google-icon {
+  height: 49px;
+}
+
+.RegisterPage .form-footer p {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  line-height: 21px;
+  text-align: center;
+  margin: 0;
+  color: #040415;
+  margin: 4rem 0 0;
+}
+
+.RegisterPage .form-footer span {
+  opacity: 0.4;
+}
+
+.RegisterPage .form-footer a {
+  color: #6C70EB;
+  text-decoration: none;
+}
+
+@media (max-width: 370px) {
+  .RegisterPage .signup-social-icons img {
+    padding: 0.3rem 1rem;
+  }
+
+  .RegisterPage .signup-social-icons .google-icon {
+    height: 38px;
+  }
+}
