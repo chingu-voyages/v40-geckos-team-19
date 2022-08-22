@@ -2,20 +2,19 @@ import React, { useState } from "react";
 import "./RegisterPageForm.css";
 
 const RegisterPageForm = () => {
+  // https://firebase.google.com/docs/reference/rest/auth#section-create-email-password
+
   const [email, setEmail] = useState("");
-  const [emailIsTouched, setEmailIsTouched] = useState();
   const [password, setPassword] = useState("");
-  const [passwordIsTouched, setPasswordIsTouched] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
 
   //email check - no empty submission
   let regex = /^\S+@\S+\.\S+$/;
   const emailCheck = regex.test(email) === true;
   const emailIsValid = email.trim() !== "" && emailCheck;
-  const emailIsInvalid = !emailIsValid && emailIsTouched;
 
   //password check - no empty submission
   const passwordIsValid = password.trim() !== "";
-  const passwordIsInvalid = !passwordIsValid && passwordIsTouched;
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -23,18 +22,18 @@ const RegisterPageForm = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    setEmailIsTouched(true);
-    setPasswordIsTouched(true);
 
     if (!emailIsValid || !passwordIsValid) {
+      return;
+    }
+
+    if (password !== confirmPassword) {
       return;
     }
 
     console.log(email, password);
     setEmail("");
     setPassword("");
-    setEmailIsTouched(false);
-    setPasswordIsTouched(false);
   };
 
   return (
@@ -48,7 +47,6 @@ const RegisterPageForm = () => {
           value={email}
           required
         />
-        {emailIsInvalid && <p>Email must not be empty</p>}
       </label>
       <label htmlFor="password-input">
         Password
@@ -59,7 +57,6 @@ const RegisterPageForm = () => {
           value={password}
           required
         />
-        {passwordIsInvalid && <p>Password must not be empty</p>}
       </label>
       <label htmlFor="confirm-input">
         Confirm Password
@@ -67,10 +64,9 @@ const RegisterPageForm = () => {
           type="password"
           id="confirm-input"
           className="password-input"
-          value={password}
+          value={confirmPassword}
           required
         />
-        {passwordIsInvalid && <p>Password must not be empty</p>}
       </label>
       <div className="form-actions">
         <button type="submit">Register</button>

@@ -7,6 +7,7 @@ import Twitter from "../../images/Twitter.png";
 import Google from "../../images/Google.png";
 
 const RegisterPage = () => {
+
   return (
     <div className="RegisterPage">
       <div className="register-form-container">
