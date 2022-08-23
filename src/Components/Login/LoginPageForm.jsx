@@ -50,7 +50,7 @@ const LoginPageForm = () => {
       })
       .then((data) => {
         console.log("Login successful");
-        //Take to voting page?
+        //Take to voting page? Managing auth state app wide - Redux or Context API?
       })
       .catch((err) => {
         alert(err.message);
