@@ -16,7 +16,10 @@ const RegisterPageForm = () => {
   //password check
   const passwordIsValid = password.trim() !== "";
 
-  //   const samePasswords = password === confirmPassword;
+  const samePasswords = password === confirmPassword;
+  // const passwordInputClass = !samePasswords
+  //   ? "register-form invalid"
+  //   : "register-form";
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -49,14 +52,24 @@ const RegisterPageForm = () => {
           returnSecureToken: true,
         }),
         headers: {
-            'Content-Type': 'application/json'
-        }
+          "Content-Type": "application/json",
+        },
       }
-    );
-    //Add error handling
+    ).then((res) => {
+      if (res.ok) {
+        //
+      } else {
+        return res.json().then((data) => {
+          //show an error modal
+          console.log(data);
+          //add weak password feedback to user
+        });
+      }
+    });
 
     setEmail("");
     setPassword("");
+    setConfirmPassword("");
   };
 
   return (
@@ -71,6 +84,7 @@ const RegisterPageForm = () => {
           required
         />
       </label>
+      {/* <div className={passwordInputClass}> */}
       <label htmlFor="password-input">
         Password
         <input
@@ -82,6 +96,8 @@ const RegisterPageForm = () => {
           required
         />
       </label>
+      {/* </div> */}
+      {/* <div className={passwordInputClass}> */}
       <label htmlFor="confirm-input">
         Confirm Password
         <input
@@ -93,9 +109,13 @@ const RegisterPageForm = () => {
           required
         />
       </label>
+      {/* </div> */}
+
       <div className="form-actions">
         <button type="submit">Register</button>
-        {/* {!samePasswords && <p>Your passwords don't match</p>} */}
+        {!samePasswords && (
+          <p className="error-text">Your passwords don't match</p>
+        )}
       </div>
     </form>
   );
