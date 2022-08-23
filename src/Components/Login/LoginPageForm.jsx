@@ -34,6 +34,41 @@ const LoginPageForm = () => {
       return;
     }
 
+    fetch(
+      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAP16n5-hHHW2ZB_qYPvqaHQlX_kAScjIk",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          returnSecureToken: true,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return response.json().then((data) => {
+            let errorMsg = "Sorry - something went wrong!";
+            // if (data && data.error && data.error.message) {
+            //   errorMsg = data.error.message;
+            // }
+
+            throw new Error(errorMsg);
+          });
+        }
+      })
+      .then((data) => {
+        console.log('Login successful');
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+
     console.log(email, password);
     setEmail("");
     setPassword("");

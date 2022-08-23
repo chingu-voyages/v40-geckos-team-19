@@ -42,11 +42,9 @@ const RegisterPageForm = () => {
           "Content-Type": "application/json",
         },
       }
-    ).then((res) => {
-      if (res.ok) {
-        return;
-      } else {
-        return res.json().then((data) => {
+    ).then((response) => {
+      if (!response.ok) {
+        return response.json().then((data) => {
           let errorMsg = "Sorry - something went wrong!";
           if (data && data.error && data.error.message) {
             errorMsg = data.error.message;
