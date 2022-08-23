@@ -3,19 +3,7 @@ import "./LoginPageForm.css";
 
 const LoginPageForm = () => {
   const [email, setEmail] = useState("");
-  const [emailIsTouched, setEmailIsTouched] = useState();
   const [password, setPassword] = useState("");
-  const [passwordIsTouched, setPasswordIsTouched] = useState();
-
-  //email check - no empty submission
-  let regex = /^\S+@\S+\.\S+$/;
-  const emailCheck = regex.test(email) === true;
-  const emailIsValid = email.trim() !== "" && emailCheck;
-  const emailIsInvalid = !emailIsValid && emailIsTouched;
-
-  //password check - no empty submission
-  const passwordIsValid = password.trim() !== "";
-  const passwordIsInvalid = !passwordIsValid && passwordIsTouched;
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -27,12 +15,6 @@ const LoginPageForm = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    setEmailIsTouched(true);
-    setPasswordIsTouched(true);
-
-    if (!emailIsValid || !passwordIsValid) {
-      return;
-    }
 
     fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAP16n5-hHHW2ZB_qYPvqaHQlX_kAScjIk",
@@ -54,16 +36,21 @@ const LoginPageForm = () => {
         } else {
           return response.json().then((data) => {
             let errorMsg = "Sorry - something went wrong!";
-            // if (data && data.error && data.error.message) {
-            //   errorMsg = data.error.message;
-            // }
-
+            if (
+              data.error.message === "INVALID_PASSWORD" ||
+              data.error.message === "EMAIL_NOT_FOUND"
+            ) {
+              errorMsg =
+                "Email and/or password are incorrect. Please check and try again";
+            }
+            console.log(data);
             throw new Error(errorMsg);
           });
         }
       })
       .then((data) => {
-        console.log('Login successful');
+        console.log("Login successful");
+        //Take to voting page?
       })
       .catch((err) => {
         alert(err.message);
@@ -72,8 +59,6 @@ const LoginPageForm = () => {
     console.log(email, password);
     setEmail("");
     setPassword("");
-    setEmailIsTouched(false);
-    setPasswordIsTouched(false);
   };
 
   return (
@@ -85,8 +70,8 @@ const LoginPageForm = () => {
           id="email-input"
           onChange={handleEmailChange}
           value={email}
+          required
         />
-        {emailIsInvalid && <p>Email must not be empty</p>}
       </label>
       <label htmlFor="password-input">
         Password
@@ -96,8 +81,8 @@ const LoginPageForm = () => {
           className="password-input"
           onChange={handlePasswordChange}
           value={password}
+          required
         />
-        {passwordIsInvalid && <p>Password must not be empty</p>}
         <div className="login-help">
           <div className="remember-me">
             <input type="checkbox" id="remember-me" />{" "}
@@ -108,7 +93,6 @@ const LoginPageForm = () => {
       </label>
       <div className="form-actions">
         <button type="submit">Login</button>
-        {/* {!formIsValid && <p>Please check your email and password</p>} */}
       </div>
     </form>
   );

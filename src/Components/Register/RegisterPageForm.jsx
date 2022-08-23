@@ -24,7 +24,7 @@ const RegisterPageForm = () => {
     event.preventDefault();
 
     if (!samePasswords) {
-      alert("passwords dont match");
+      alert(`Passwords don't match`);
     }
 
     console.log(email, password, confirmPassword);
@@ -60,7 +60,7 @@ const RegisterPageForm = () => {
   };
 
   return (
-    <form action="" className="register-form" onSubmit={handleFormSubmit}>
+    <form className="register-form" onSubmit={handleFormSubmit}>
       <label htmlFor="email-input">
         Email
         <input
