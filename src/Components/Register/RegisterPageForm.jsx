@@ -2,24 +2,11 @@ import React, { useState } from "react";
 import "./RegisterPageForm.css";
 
 const RegisterPageForm = () => {
-  // https://firebase.google.com/docs/reference/rest/auth#section-create-email-password
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState();
-
-  //email check
-  let regex = /^\S+@\S+\.\S+$/;
-  const emailCheck = regex.test(email) === true;
-  const emailIsValid = email.trim() !== "" && emailCheck;
-
-  //password check
-  const passwordIsValid = password.trim() !== "";
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const samePasswords = password === confirmPassword;
-  // const passwordInputClass = !samePasswords
-  //   ? "register-form invalid"
-  //   : "register-form";
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -36,8 +23,8 @@ const RegisterPageForm = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    if (!emailIsValid || !passwordIsValid) {
-      return;
+    if (!samePasswords) {
+      alert("passwords dont match");
     }
 
     console.log(email, password, confirmPassword);
@@ -57,12 +44,14 @@ const RegisterPageForm = () => {
       }
     ).then((res) => {
       if (res.ok) {
-        //
+        return;
       } else {
         return res.json().then((data) => {
-          //show an error modal
-          console.log(data);
-          //add weak password feedback to user
+          let errorMsg = "Sorry - something went wrong!";
+          if (data && data.error && data.error.message) {
+            errorMsg = data.error.message;
+          }
+          alert(errorMsg);
         });
       }
     });
@@ -84,7 +73,6 @@ const RegisterPageForm = () => {
           required
         />
       </label>
-      {/* <div className={passwordInputClass}> */}
       <label htmlFor="password-input">
         Password
         <input
@@ -96,8 +84,6 @@ const RegisterPageForm = () => {
           required
         />
       </label>
-      {/* </div> */}
-      {/* <div className={passwordInputClass}> */}
       <label htmlFor="confirm-input">
         Confirm Password
         <input
@@ -109,13 +95,8 @@ const RegisterPageForm = () => {
           required
         />
       </label>
-      {/* </div> */}
-
       <div className="form-actions">
         <button type="submit">Register</button>
-        {!samePasswords && (
-          <p className="error-text">Your passwords don't match</p>
-        )}
       </div>
     </form>
   );
