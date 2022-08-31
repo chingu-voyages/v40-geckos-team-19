@@ -1,0 +1,116 @@
+.designModalContainer {
+    display: flex;
+    background-color: rgba(34, 34, 34, 0.856);
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .designAndPreviewsContainer {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+  }
+  
+  .modalDesign {
+    width: 80%;
+    position: relative;
+  }
+  
+  .modalDesignImage {
+    width: 100%;
+  }
+  
+  .modalThumbIconContainer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(100, 100, 100, 0.6);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    padding-bottom: 3px;
+    border-radius: 30px;
+  }
+  
+  .modalThumbIconNotVoted {
+    width: 25px;
+    height: 25px;
+    fill: rgb(214, 214, 214);
+  }
+  
+  .modalThumbIconVoted {
+    width: 25px;
+    height: 25px;
+    fill: rgb(245, 213, 71);
+  }
+  
+  .modalThumbIconNotVoted:active {
+    fill: rgb(245, 213, 71);
+    transition: all ease-in-out 0.6s;
+    transform: scale(1.2);
+  }
+  
+  .modalThumbIconVoted:active {
+    transition: all ease-in-out 0.6s;
+    transform: scale(1.2);
+  }
+  
+  .modalSidebar {
+    width: 18%;
+  }
+  
+  .modalPreviewImageContainer {
+    display: flex;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid rgb(119, 119, 119);
+    transition: all ease-in-out 0.1s;
+  }
+  
+  .modalPreviewImageContainerActive {
+    display: flex;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all ease-in-out 0.1s;
+    border: 3px solid rgb(196, 179, 84);
+  }
+  
+  .modalPreviewImage {
+    width: 100%;
+  }
+  
+  .modalCloseButton {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    cursor: pointer;
+    font-size: x-large;
+    color: rgb(221, 64, 64);
+    transition: all ease-in-out 0.1s;
+  }
+  
+  @media (hover: hover) {
+    .modalThumbIconContainer:hover {
+      cursor: pointer;
+    }
+    .modalThumbIconNotVoted:hover {
+      fill: rgb(243, 234, 149);
+    }
+    .modalCloseButton:hover {
+      color: bisque;
+    }
+    .modalPreviewImageContainer:hover {
+      border: 3px solid rgb(221, 204, 120);
+      cursor: pointer;
+    }
+  }
+  
