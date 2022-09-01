@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./VotingPage.css";
+import styles from "./VotingPage.module.css";
 import Dropzone from "./Dropzone";
 import CommentsForm from "./CommentsForm";
 import Comment from "./Comment";
@@ -17,6 +17,8 @@ import {
 } from "firebase/firestore";
 import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
+import SimpleBarReact from "simplebar-react";
+import "simplebar/src/simplebar.css";
 
 export default function VotingPage() {
   const [design1DownloadUrl, setDesign1DownloadUrl] = useState(null);
@@ -155,7 +157,7 @@ export default function VotingPage() {
   }, []);
 
   return (
-    <div className="container">
+    <div className={styles.votingPageContainer}>
       {designModalIsOpen ? (
         <DesignModal
           isOpen={designModalIsOpen}
@@ -178,58 +180,65 @@ export default function VotingPage() {
       ) : (
         ""
       )}
-      <Dropzone
-        vote={voteDesign1}
-        unvote={unvoteDesign1}
-        designNumber={1}
-        votingPageID={"xshrMf0fNV6CQl8GWxYW"}
-        setdropimage={setDropedImages1}
-        previewImage={dropedImages1}
-        preview={previewMode1}
-        setPreviewMode={setPreviewMode1}
-        firebaseImage={design1DownloadUrl}
-        voteNumber={design1VoteNumbers}
-        pagemode={pagemode}
-        voted={design1Voted}
-        votedState={setDesign1Voted}
-        setUserVoted={setUserVoted}
-        userVoted={userVoted}
-        setModalState={setDesignModalIsOpen}
-        setSelectedDesign={setSelectedDesignInModal}
-      />
-      <Dropzone
-        vote={voteDesign2}
-        unvote={unvoteDesign2}
-        designNumber={2}
-        votingPageID={"xshrMf0fNV6CQl8GWxYW"}
-        setdropimage={setDropedImages2}
-        previewImage={dropedImages2}
-        preview={previewMode2}
-        setPreviewMode={setPreviewMode2}
-        firebaseImage={design2DownloadUrl}
-        voteNumber={design2VoteNumbers}
-        pagemode={pagemode}
-        voted={design2Voted}
-        votedState={setDesign2Voted}
-        setUserVoted={setUserVoted}
-        userVoted={userVoted}
-        setModalState={setDesignModalIsOpen}
-        setSelectedDesign={setSelectedDesignInModal}
-      />
-      {!(pagemode == "voting") ? (
-        <button onClick={uploadImages}>click to upload</button>
-      ) : (
-        <CommentsForm sendComment={sendComment} />
-      )}
-      {commentArray?.map((comment) => (
-        <Comment
-          key={comment.id}
-          comment={comment.text}
-          commentId={comment.id}
-          commenterName={comment.userName}
-          commenterImage={comment.userImage}
+      <div className={styles.dropzoneSectionContainer}>
+        <Dropzone
+          vote={voteDesign1}
+          unvote={unvoteDesign1}
+          designNumber={1}
+          votingPageID={"xshrMf0fNV6CQl8GWxYW"}
+          setdropimage={setDropedImages1}
+          previewImage={dropedImages1}
+          preview={previewMode1}
+          setPreviewMode={setPreviewMode1}
+          firebaseImage={design1DownloadUrl}
+          voteNumber={design1VoteNumbers}
+          pagemode={pagemode}
+          voted={design1Voted}
+          votedState={setDesign1Voted}
+          setUserVoted={setUserVoted}
+          userVoted={userVoted}
+          setModalState={setDesignModalIsOpen}
+          setSelectedDesign={setSelectedDesignInModal}
         />
-      ))}
+        <Dropzone
+          vote={voteDesign2}
+          unvote={unvoteDesign2}
+          designNumber={2}
+          votingPageID={"xshrMf0fNV6CQl8GWxYW"}
+          setdropimage={setDropedImages2}
+          previewImage={dropedImages2}
+          preview={previewMode2}
+          setPreviewMode={setPreviewMode2}
+          firebaseImage={design2DownloadUrl}
+          voteNumber={design2VoteNumbers}
+          pagemode={pagemode}
+          voted={design2Voted}
+          votedState={setDesign2Voted}
+          setUserVoted={setUserVoted}
+          userVoted={userVoted}
+          setModalState={setDesignModalIsOpen}
+          setSelectedDesign={setSelectedDesignInModal}
+        />
+      </div>
+      <div className={styles.commentsSectionContainer}>
+        {!(pagemode == "voting") ? (
+          <button onClick={uploadImages}>click to upload</button>
+        ) : (
+          <CommentsForm sendComment={sendComment} />
+        )}
+        <SimpleBarReact style={{ maxHeight: "450px" }}>
+          {commentArray?.map((comment) => (
+            <Comment
+              key={comment.id}
+              comment={comment.text}
+              commentId={comment.id}
+              commenterName={comment.userName}
+              commenterImage={comment.userImage}
+              commentTime={comment.time}
+            />
+          ))}
+        </SimpleBarReact>
+      </div>
     </div>
   );
 }

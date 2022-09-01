@@ -17,7 +17,7 @@ export default function CommentsForm(props) {
         <textarea
           value={formValue}
           onChange={(e) => handleTextChange(e)}
-          cols="60"
+          cols="50"
           rows="4"
         />
         <br />
