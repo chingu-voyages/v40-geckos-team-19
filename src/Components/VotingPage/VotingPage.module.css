@@ -1,0 +1,19 @@
+.votingPageContainer {
+  display: flex;
+}
+
+.dropzoneSectionContainer {
+  width: 65%;
+  padding-left: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.commentsSectionContainer {
+  width: 35%;
+  position: sticky;
+  max-height: 100vh;
+  top: 0;
+  padding-right: 2rem;
+  padding-top: 4rem;
+}
