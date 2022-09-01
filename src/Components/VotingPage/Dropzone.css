@@ -1,0 +1,207 @@
+.dropzoneContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .dropzone {
+    background-color: rgb(243, 243, 243);
+    /* padding-top: 30px;
+    padding-bottom: 30px; */
+    min-height: 350px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
+    margin-top: 30px;
+    min-width: 450px;
+  }
+  .dropzoneActive {
+    background-color: rgb(250, 250, 250);
+    /* padding-top: 30px;
+    padding-bottom: 30px; */
+    min-height: 350px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
+    margin-top: 30px;
+    min-width: 450px;
+  }
+  
+  .dropzoneText {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: rgb(167, 167, 167);
+  }
+  
+  .previewImageContainer {
+    position: relative;
+  }
+  
+  .previewNoteContainer {
+    position: absolute;
+    display: flex;
+    background-color: rgba(100, 100, 100, 0.6);
+    backdrop-filter: blur(2px);
+    border-radius: 30px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    align-items: center;
+    width: fit-content;
+    right: 10px;
+    top: 10px;
+  }
+  
+  .previewModeDot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50px;
+    background-image: radial-gradient(rgb(255, 115, 0), rgba(0, 0, 0, 0));
+    display: block;
+    margin-right: 6px;
+  }
+  
+  .votingModeDot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50px;
+    background-image: radial-gradient(rgb(0, 255, 136), rgba(0, 0, 0, 0));
+    display: block;
+    margin-right: 6px;
+  }
+  
+  .imageLoaded {
+    max-width: 100%;
+    height: auto;
+    visibility: visible;
+  }
+  
+  .imagenotLoaded {
+    visibility: hidden;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .realImageContainer {
+    position: relative;
+  }
+  
+  .realNoteContainer {
+    position: absolute;
+    display: flex;
+    background-color: rgba(100, 100, 100, 0.6);
+    backdrop-filter: blur(2px);
+    border-radius: 30px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    align-items: center;
+    width: fit-content;
+    right: 10px;
+    top: 10px;
+  }
+  
+  .realNoteContainerHidden {
+    visibility: hidden;
+  }
+  
+  .test {
+    background-color: blueviolet;
+  }
+  
+  .noteText {
+    color: rgb(255, 255, 255);
+  }
+  
+  .voteNumber {
+    margin-left: 30px;
+  }
+  
+  .thumbIconNotVoted {
+    width: 25px;
+    height: 25px;
+    fill: rgb(214, 214, 214);
+  }
+  
+  .thumbIconVoted {
+    width: 25px;
+    height: 25px;
+    fill: rgb(245, 213, 71);
+  }
+  
+  .thumbIconNotVoted:active {
+    fill: rgb(245, 213, 71);
+    transition: all ease-in-out 0.6s;
+    transform: scale(1.2);
+  }
+  
+  .thumbIconVoted:active {
+    transition: all ease-in-out 0.6s;
+    transform: scale(1.2);
+  }
+  
+  .thumbIconContainer {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(100, 100, 100, 0.6);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    padding-bottom: 3px;
+    border-radius: 30px;
+  }
+  .thumbIconContainer:hover {
+    cursor: pointer;
+  }
+  
+  .thumbIconContainer:active {
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .fullScreenModalButtonContainer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(100, 100, 100, 0.6);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  
+  .fullScreenModalButtonImage {
+    color: rgb(192, 192, 192);
+    transition: all 0.15s;
+  }
+  
+  @media (hover: hover) {
+    .thumbIconNotVoted:hover {
+      fill: rgb(243, 234, 149);
+    }
+    .fullScreenModalButtonContainer:hover {
+      cursor: pointer;
+    }
+    .fullScreenModalButtonImage:hover {
+      color: rgb(235, 235, 235);
+    }
+  }
+  
