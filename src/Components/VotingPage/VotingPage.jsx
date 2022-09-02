@@ -1,12 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import styles from "./VotingPage.module.css";
+import { useParams } from "react-router-dom";
 import Dropzone from "./Dropzone";
 import CommentsForm from "./CommentsForm";
 import Comment from "./Comment";
 import DesignModal from "./DesignModal";
 import { db, storage } from "../Firebase/firebase.js";
 import {
+  setDoc,
   addDoc,
   collection,
   doc,
@@ -21,6 +23,14 @@ import SimpleBarReact from "simplebar-react";
 import "simplebar/src/simplebar.css";
 
 export default function VotingPage() {
+  const pageModeDefinder = () => {
+    if (pageUrl) {
+      return "voting";
+    } else {
+      return "generatingPage";
+    }
+  };
+  const { pageUrl } = useParams();
   const [design1DownloadUrl, setDesign1DownloadUrl] = useState(null);
   const [dropedImages1, setDropedImages1] = useState(null);
   const [design2DownloadUrl, setDesign2DownloadUrl] = useState(null);
@@ -29,17 +39,17 @@ export default function VotingPage() {
   const [previewMode2, setPreviewMode2] = useState(false);
   const [design1VoteNumbers, setDesign1VoteNumbers] = useState(0);
   const [design2VoteNumbers, setDesign2VoteNumbers] = useState(0);
-  const [pagemode, setPagemode] = useState("voting");
-  const [votingPageID, setVotingPageID] = useState("xshrMf0fNV6CQl8GWxYW");
+  const [votingPageUrl, setVotingPageUrl] = useState(pageUrl);
   const [design1Voted, setDesign1Voted] = useState(false);
   const [design2Voted, setDesign2Voted] = useState(false);
+  const [pageMode, setPageMode] = useState(pageModeDefinder);
   const [commentArray, setCommentArray] = useState();
   const [userVoted, setUserVoted] = useState(false);
   const [designModalIsOpen, setDesignModalIsOpen] = useState(false);
   const [selectedDesignInModal, setSelectedDesignInModal] = useState(2);
 
   const voteDesign1 = async () => {
-    const docRef = doc(db, "images", votingPageID);
+    const docRef = doc(db, "images", votingPageUrl);
     const docSnap = await getDoc(docRef);
     const design1VoteNumbers = docSnap.data().design1Votes;
     await updateDoc(docRef, {
@@ -49,7 +59,7 @@ export default function VotingPage() {
   };
 
   const voteDesign2 = async () => {
-    const docRef = doc(db, "images", votingPageID);
+    const docRef = doc(db, "images", votingPageUrl);
     const docSnap = await getDoc(docRef);
     const design2VoteNumbers = docSnap.data().design2Votes;
     await updateDoc(docRef, {
@@ -59,7 +69,7 @@ export default function VotingPage() {
   };
 
   const unvoteDesign1 = async () => {
-    const docRef = doc(db, "images", votingPageID);
+    const docRef = doc(db, "images", votingPageUrl);
     const docSnap = await getDoc(docRef);
     const design1VoteNumbers = docSnap.data().design1Votes;
     await updateDoc(docRef, {
@@ -69,7 +79,7 @@ export default function VotingPage() {
   };
 
   const unvoteDesign2 = async () => {
-    const docRef = doc(db, "images", votingPageID);
+    const docRef = doc(db, "images", votingPageUrl);
     const docSnap = await getDoc(docRef);
     const design2VoteNumbers = docSnap.data().design2Votes;
     await updateDoc(docRef, {
@@ -79,20 +89,23 @@ export default function VotingPage() {
   };
 
   const downloadDesigns = async () => {
-    const imageURLRef = doc(db, "images", votingPageID);
+    const imageURLRef = doc(db, "images", votingPageUrl);
     const docSnap = await getDoc(imageURLRef);
     setDesign1DownloadUrl(docSnap.data().image1DownloadUrl);
     setDesign2DownloadUrl(docSnap.data().image2DownloadUrl);
   };
 
   const uploadImages = async () => {
-    const docRef = await addDoc(collection(db, "images"), {
+    const generatedPageUrl = uuidv4();
+    setVotingPageUrl(generatedPageUrl);
+    console.log(generatedPageUrl);
+    await setDoc(doc(db, "images", generatedPageUrl), {
       timestamp: serverTimestamp(),
-      name: "owner1",
-      design1Votes: 2,
-      design2Votes: 3,
+      userID: "12345",
+      design1Votes: 0,
+      design2Votes: 0,
     });
-
+    const docRef = doc(db, "images", generatedPageUrl);
     const docSnap = await getDoc(docRef);
     setDesign1VoteNumbers(docSnap.data().design1Votes);
     setDesign2VoteNumbers(docSnap.data().design2Votes);
@@ -125,7 +138,7 @@ export default function VotingPage() {
   };
 
   const sendComment = async (comment) => {
-    const docRef = doc(db, "images", votingPageID);
+    const docRef = doc(db, "images", votingPageUrl);
     await updateDoc(docRef, {
       comments: arrayUnion({
         id: uuidv4(),
@@ -141,10 +154,10 @@ export default function VotingPage() {
   };
 
   useEffect(() => {
-    if (pagemode == "voting") {
+    if (pageMode == "voting") {
       (async () => {
         downloadDesigns();
-        const docRef = doc(db, "images", votingPageID);
+        const docRef = doc(db, "images", votingPageUrl);
         const docSnap = await getDoc(docRef);
         const design1VoteNumbers = docSnap.data().design1Votes;
         const design2VoteNumbers = docSnap.data().design2Votes;
@@ -185,14 +198,14 @@ export default function VotingPage() {
           vote={voteDesign1}
           unvote={unvoteDesign1}
           designNumber={1}
-          votingPageID={"xshrMf0fNV6CQl8GWxYW"}
+          votingPageUrl={"xshrMf0fNV6CQl8GWxYW"}
           setdropimage={setDropedImages1}
           previewImage={dropedImages1}
           preview={previewMode1}
           setPreviewMode={setPreviewMode1}
           firebaseImage={design1DownloadUrl}
           voteNumber={design1VoteNumbers}
-          pagemode={pagemode}
+          pageMode={pageMode}
           voted={design1Voted}
           votedState={setDesign1Voted}
           setUserVoted={setUserVoted}
@@ -204,14 +217,14 @@ export default function VotingPage() {
           vote={voteDesign2}
           unvote={unvoteDesign2}
           designNumber={2}
-          votingPageID={"xshrMf0fNV6CQl8GWxYW"}
+          votingPageUrl={"xshrMf0fNV6CQl8GWxYW"}
           setdropimage={setDropedImages2}
           previewImage={dropedImages2}
           preview={previewMode2}
           setPreviewMode={setPreviewMode2}
           firebaseImage={design2DownloadUrl}
           voteNumber={design2VoteNumbers}
-          pagemode={pagemode}
+          pageMode={pageMode}
           voted={design2Voted}
           votedState={setDesign2Voted}
           setUserVoted={setUserVoted}
@@ -221,7 +234,7 @@ export default function VotingPage() {
         />
       </div>
       <div className={styles.commentsSectionContainer}>
-        {!(pagemode == "voting") ? (
+        {!(pageMode == "voting") ? (
           <button onClick={uploadImages}>click to upload</button>
         ) : (
           <CommentsForm sendComment={sendComment} />

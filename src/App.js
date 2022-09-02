@@ -1,4 +1,4 @@
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Router, Routes, useParams } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./Components/Login/LoginPage";
@@ -12,6 +12,7 @@ function App() {
       <Route path="/login" exact element={<LoginPage />} />
       <Route path="/register" exact element={<RegisterPage />} />
       <Route path="/voting" exact element={<VotingPage />} />
+      <Route path="/voting/:pageUrl" element={<VotingPage />} />
     </Routes>
   );
 }
