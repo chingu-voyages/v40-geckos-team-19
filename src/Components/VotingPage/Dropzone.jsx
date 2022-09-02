@@ -6,7 +6,7 @@ import ImageUpload from "../../images/image-upload-icon.svg";
 export default function Dropzone(props) {
   const [firebaseImage, setFirebaseImage] = useState(null);
   const [imageLoaded, setImageLoaded] = useState(false);
-  const isVotingPage = props.pagemode === "voting";
+  const isVotingPage = props.pageMode === "voting";
 
   const onDrop = useCallback((acceptedFiles) => {
     props.setdropimage(
@@ -154,7 +154,7 @@ export default function Dropzone(props) {
               ) : props.preview ? (
                 showPreveiw
               ) : (
-                <div>
+                <div className="dropzonePlaceholderContainer">
                   <img style={{ width: "100px" }} src={ImageUpload} alt="" />
                   <div>Upload Designe {props.designNumber}</div>
                   <div>Max Size: 5Mb</div>

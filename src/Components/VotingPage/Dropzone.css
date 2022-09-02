@@ -40,6 +40,15 @@
   color: rgb(167, 167, 167);
 }
 
+.dropzonePlaceholderContainer{
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 500px;
+}
+
 .previewImageContainer {
   position: relative;
 }

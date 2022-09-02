@@ -102,6 +102,7 @@ export default function VotingPage() {
     await setDoc(doc(db, "images", generatedPageUrl), {
       timestamp: serverTimestamp(),
       userID: "12345",
+      votingPageUrl: generatedPageUrl,
       design1Votes: 0,
       design2Votes: 0,
     });
