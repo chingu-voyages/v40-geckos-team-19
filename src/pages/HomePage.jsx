@@ -1,6 +1,6 @@
 import React from 'react'
 import CTA from './../Components/CTA/index'
-import Footer from './../Components/Footer/index'
+import Footer from '../Components/Footer/Footer'
 import ImageSlider from './../Components/ImageSlider/ImageSlider'
 
 const HomePage = () => {
