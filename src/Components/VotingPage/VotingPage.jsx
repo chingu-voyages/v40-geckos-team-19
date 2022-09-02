@@ -154,7 +154,7 @@ export default function VotingPage() {
   };
 
   useEffect(() => {
-    if (pageMode == "voting") {
+    if (pageMode === "voting") {
       (async () => {
         downloadDesigns();
         const docRef = doc(db, "images", votingPageUrl);
@@ -234,7 +234,7 @@ export default function VotingPage() {
         />
       </div>
       <div className={styles.commentsSectionContainer}>
-        {!(pageMode == "voting") ? (
+        {!(pageMode === "voting") ? (
           <button onClick={uploadImages}>click to upload</button>
         ) : (
           <CommentsForm sendComment={sendComment} />

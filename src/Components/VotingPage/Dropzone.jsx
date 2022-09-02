@@ -6,7 +6,7 @@ import ImageUpload from "../../images/image-upload-icon.svg";
 export default function Dropzone(props) {
   const [firebaseImage, setFirebaseImage] = useState(null);
   const [imageLoaded, setImageLoaded] = useState(false);
-  const isVotingPage = props.pagemode == "voting";
+  const isVotingPage = props.pagemode === "voting";
 
   const onDrop = useCallback((acceptedFiles) => {
     props.setdropimage(

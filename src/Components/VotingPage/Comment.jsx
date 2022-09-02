@@ -1,7 +1,6 @@
 import styles from "./Comment.module.css";
 
 export default function Comment(props) {
-  // const commentDate = new Date(props.commentTime);
   console.log();
   return (
     <div className={styles.commentContainer}>
