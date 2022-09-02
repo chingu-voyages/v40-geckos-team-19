@@ -1,7 +1,7 @@
 import React from 'react'
-import CTA from '../components/CTA'
-import Footer from '../components/Footer'
-import ImageSlider from '../components/ImageSlider/ImageSlider'
+import CTA from './../Components/CTA/index'
+import Footer from './../Components/Footer/index'
+import ImageSlider from './../Components/ImageSlider/ImageSlider'
 
 const HomePage = () => {
   return (
