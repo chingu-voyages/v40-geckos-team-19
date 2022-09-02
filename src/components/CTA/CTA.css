@@ -1,0 +1,36 @@
+.cta_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cta_container h3 {
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cta_container p {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cta_container button {
+    padding: 10px;
+    background-color: transparent;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.cta_container button:hover {
+    background-color: black;
+    color: white;
+    transition: .5s;
+}
