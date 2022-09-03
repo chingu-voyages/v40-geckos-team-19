@@ -49,7 +49,7 @@ export default function VotingPage() {
   const [selectedDesignInModal, setSelectedDesignInModal] = useState(2);
 
   const voteDesign1 = async () => {
-    const docRef = doc(db, "images", votingPageUrl);
+    const docRef = doc(db, "VotingPages", votingPageUrl);
     const docSnap = await getDoc(docRef);
     const design1VoteNumbers = docSnap.data().design1Votes;
     await updateDoc(docRef, {
@@ -59,7 +59,7 @@ export default function VotingPage() {
   };
 
   const voteDesign2 = async () => {
-    const docRef = doc(db, "images", votingPageUrl);
+    const docRef = doc(db, "VotingPages", votingPageUrl);
     const docSnap = await getDoc(docRef);
     const design2VoteNumbers = docSnap.data().design2Votes;
     await updateDoc(docRef, {
@@ -69,7 +69,7 @@ export default function VotingPage() {
   };
 
   const unvoteDesign1 = async () => {
-    const docRef = doc(db, "images", votingPageUrl);
+    const docRef = doc(db, "VotingPages", votingPageUrl);
     const docSnap = await getDoc(docRef);
     const design1VoteNumbers = docSnap.data().design1Votes;
     await updateDoc(docRef, {
@@ -79,7 +79,7 @@ export default function VotingPage() {
   };
 
   const unvoteDesign2 = async () => {
-    const docRef = doc(db, "images", votingPageUrl);
+    const docRef = doc(db, "VotingPages", votingPageUrl);
     const docSnap = await getDoc(docRef);
     const design2VoteNumbers = docSnap.data().design2Votes;
     await updateDoc(docRef, {
@@ -89,7 +89,7 @@ export default function VotingPage() {
   };
 
   const downloadDesigns = async () => {
-    const imageURLRef = doc(db, "images", votingPageUrl);
+    const imageURLRef = doc(db, "VotingPages", votingPageUrl);
     const docSnap = await getDoc(imageURLRef);
     setDesign1DownloadUrl(docSnap.data().image1DownloadUrl);
     setDesign2DownloadUrl(docSnap.data().image2DownloadUrl);
@@ -99,25 +99,25 @@ export default function VotingPage() {
     const generatedPageUrl = uuidv4();
     setVotingPageUrl(generatedPageUrl);
     console.log(generatedPageUrl);
-    await setDoc(doc(db, "images", generatedPageUrl), {
+    await setDoc(doc(db, "VotingPages", generatedPageUrl), {
       timestamp: serverTimestamp(),
       userID: "12345",
       votingPageUrl: generatedPageUrl,
       design1Votes: 0,
       design2Votes: 0,
     });
-    const docRef = doc(db, "images", generatedPageUrl);
+    const docRef = doc(db, "VotingPages", generatedPageUrl);
     const docSnap = await getDoc(docRef);
     setDesign1VoteNumbers(docSnap.data().design1Votes);
     setDesign2VoteNumbers(docSnap.data().design2Votes);
     await Promise.all(
       dropedImages1.map((image) => {
-        const ImageRef = ref(storage, `images/${docRef.id}/${image.path}`);
+        const ImageRef = ref(storage, `VotingPages/${docRef.id}/${image.path}`);
         uploadBytes(ImageRef, image, "data_url").then(async () => {
           const downloadUrl = await getDownloadURL(ImageRef);
           setDesign1DownloadUrl(downloadUrl);
           setPreviewMode1(false);
-          await updateDoc(doc(db, "images", docRef.id), {
+          await updateDoc(doc(db, "VotingPages", docRef.id), {
             image1DownloadUrl: arrayUnion(downloadUrl),
           });
         });
@@ -125,12 +125,12 @@ export default function VotingPage() {
     );
     await Promise.all(
       dropedImages2.map((image) => {
-        const ImageRef = ref(storage, `images/${docRef.id}/${image.path}`);
+        const ImageRef = ref(storage, `VotingPages/${docRef.id}/${image.path}`);
         uploadBytes(ImageRef, image, "data_url").then(async () => {
           const downloadUrl = await getDownloadURL(ImageRef);
           setDesign2DownloadUrl(downloadUrl);
           setPreviewMode2(false);
-          await updateDoc(doc(db, "images", docRef.id), {
+          await updateDoc(doc(db, "VotingPages", docRef.id), {
             image2DownloadUrl: arrayUnion(downloadUrl),
           });
         });
@@ -139,7 +139,7 @@ export default function VotingPage() {
   };
 
   const sendComment = async (comment) => {
-    const docRef = doc(db, "images", votingPageUrl);
+    const docRef = doc(db, "VotingPages", votingPageUrl);
     await updateDoc(docRef, {
       comments: arrayUnion({
         id: uuidv4(),
@@ -158,7 +158,7 @@ export default function VotingPage() {
     if (pageMode === "voting") {
       (async () => {
         downloadDesigns();
-        const docRef = doc(db, "images", votingPageUrl);
+        const docRef = doc(db, "VotingPages", votingPageUrl);
         const docSnap = await getDoc(docRef);
         const design1VoteNumbers = docSnap.data().design1Votes;
         const design2VoteNumbers = docSnap.data().design2Votes;
