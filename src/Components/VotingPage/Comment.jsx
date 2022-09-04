@@ -1,23 +1,22 @@
-import styles from "./Comment.module.css";
+import "./Comment.css";
 
 export default function Comment(props) {
-  console.log();
   return (
-    <div className={styles.commentContainer}>
-      <div className={styles.commentHeaderContainer}>
-        <div className={styles.commentImageAndNameContainer}>
-          <div className={styles.commenterImageContainer}>
+    <div className="commentContainer">
+      <div className="commentHeaderContainer">
+        <div className="commentImageAndNameContainer">
+          <div className="commenterImageContainer">
             <img
-              className={styles.commenterImage}
+              className="commenterImage"
               src={props.commenterImage}
               alt=""
             />
           </div>
-          <div className={styles.commenterName}>{props.commenterName}</div>
+          <div className="commenterName">{props.commenterName}</div>
         </div>
         <div>{props.commentTime.toDate().toUTCString()}</div>
       </div>
-      <div className={styles.commentText}>{props.comment}</div>
+      <div className="commentText">{props.comment}</div>
     </div>
   );
 }

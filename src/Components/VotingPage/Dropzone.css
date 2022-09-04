@@ -1,4 +1,4 @@
-.dropzoneContainer {
+.dropZoneComponent .dropzoneContainer {
   display: flex;
   align-items: center;
 }
@@ -40,7 +40,7 @@
   color: rgb(167, 167, 167);
 }
 
-.dropzonePlaceholderContainer{
+.dropzonePlaceholderContainer {
   padding: 3rem;
   display: flex;
   flex-direction: column;

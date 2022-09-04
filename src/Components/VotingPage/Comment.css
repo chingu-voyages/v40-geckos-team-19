@@ -3,7 +3,7 @@
   padding-right: 30px;
 }
 
-.commentHeaderContainer {
+.commentContainer .commentHeaderContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -11,27 +11,27 @@
   padding-bottom: 1rem;
 }
 
-.commentImageAndNameContainer {
+.commentContainer .commentImageAndNameContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.commenterImageContainer {
+.commentContainer .commenterImageContainer {
   display: flex;
   width: fit-content;
   border-radius: 50%;
   overflow: hidden;
 }
 
-.commenterImage {
+.commentContainer .commenterImage {
   width: 2.5rem;
   height: 2.5rem;
 }
-.commenterName{
+.commentContainer .commenterName {
   padding-left: 1rem;
 }
 
-.commentText{
+.commentContainer .commentText {
   padding-left: 1rem;
 }

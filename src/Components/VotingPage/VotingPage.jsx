@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import styles from "./VotingPage.module.css";
+import "./VotingPage.css";
 import { useParams } from "react-router-dom";
 import Dropzone from "./Dropzone";
 import CommentsForm from "./CommentsForm";
@@ -21,6 +21,7 @@ import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
 import SimpleBarReact from "simplebar-react";
 import "simplebar/src/simplebar.css";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function VotingPage() {
   const pageModeDefinder = () => {
@@ -171,30 +172,38 @@ export default function VotingPage() {
   }, []);
 
   return (
-    <div className={styles.votingPageContainer}>
-      {designModalIsOpen ? (
-        <DesignModal
-          isOpen={designModalIsOpen}
-          setModalState={setDesignModalIsOpen}
-          design1Url={design1DownloadUrl}
-          design2Url={design2DownloadUrl}
-          selectedDesign={selectedDesignInModal}
-          setSelectedDesign={setSelectedDesignInModal}
-          voteDesign1={voteDesign1}
-          unvoteDesign1={unvoteDesign1}
-          voteDesign2={voteDesign2}
-          unvoteDesign2={unvoteDesign2}
-          design1Voted={design1Voted}
-          design2Voted={design2Voted}
-          setDesign1Voted={setDesign1Voted}
-          setDesign2Voted={setDesign2Voted}
-          setUserVoted={setUserVoted}
-          userVoted={userVoted}
-        />
-      ) : (
-        ""
-      )}
-      <div className={styles.dropzoneSectionContainer}>
+    <div className="votingPageContainer">
+      <AnimatePresence>
+        {designModalIsOpen ? (
+          <motion.div
+            transition={{ ease: "easeOut", duration: 0.2 }}
+            exit={{ opacity: 0 }}
+            style={{ zIndex: 2 }}
+          >
+            <DesignModal
+              isOpen={designModalIsOpen}
+              setModalState={setDesignModalIsOpen}
+              design1Url={design1DownloadUrl}
+              design2Url={design2DownloadUrl}
+              selectedDesign={selectedDesignInModal}
+              setSelectedDesign={setSelectedDesignInModal}
+              voteDesign1={voteDesign1}
+              unvoteDesign1={unvoteDesign1}
+              voteDesign2={voteDesign2}
+              unvoteDesign2={unvoteDesign2}
+              design1Voted={design1Voted}
+              design2Voted={design2Voted}
+              setDesign1Voted={setDesign1Voted}
+              setDesign2Voted={setDesign2Voted}
+              setUserVoted={setUserVoted}
+              userVoted={userVoted}
+            />
+          </motion.div>
+        ) : (
+          ""
+        )}
+      </AnimatePresence>
+      <div className="dropzoneSectionContainer">
         <Dropzone
           vote={voteDesign1}
           unvote={unvoteDesign1}
@@ -234,7 +243,7 @@ export default function VotingPage() {
           setSelectedDesign={setSelectedDesignInModal}
         />
       </div>
-      <div className={styles.commentsSectionContainer}>
+      <div className="commentsSectionContainer">
         {!(pageMode === "voting") ? (
           <button onClick={uploadImages}>click to upload</button>
         ) : (

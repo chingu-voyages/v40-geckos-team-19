@@ -2,14 +2,14 @@
   display: flex;
 }
 
-.dropzoneSectionContainer {
+.votingPageContainer .dropzoneSectionContainer {
   width: 65%;
   padding-left: 3rem;
   display: flex;
   flex-direction: column;
 }
 
-.commentsSectionContainer {
+.votingPageContainer .commentsSectionContainer {
   width: 35%;
   position: sticky;
   max-height: 100vh;

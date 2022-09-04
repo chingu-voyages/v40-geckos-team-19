@@ -138,7 +138,7 @@ export default function Dropzone(props) {
   );
 
   return (
-    <div>
+    <div className="dropZoneComponent">
       <div className="dropzoneContainer">
         {!isVotingPage ? (
           <div
