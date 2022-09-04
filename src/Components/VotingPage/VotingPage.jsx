@@ -9,8 +9,6 @@ import DesignModal from "./DesignModal";
 import { db, storage } from "../Firebase/firebase.js";
 import {
   setDoc,
-  addDoc,
-  collection,
   doc,
   getDoc,
   serverTimestamp,
@@ -99,7 +97,7 @@ export default function VotingPage() {
   const uploadImages = async () => {
     const generatedPageUrl = uuidv4();
     setVotingPageUrl(generatedPageUrl);
-    console.log(generatedPageUrl);
+    console.log("generated page url : \n" + generatedPageUrl);
     await setDoc(doc(db, "VotingPages", generatedPageUrl), {
       timestamp: serverTimestamp(),
       userID: "12345",
