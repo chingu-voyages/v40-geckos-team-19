@@ -28,11 +28,11 @@ const RegisterPage = () => {
             <img src={Twitter} alt="Login with Twitter" />
           </a>
         </div>
-        <footer className="form-footer">
+        <div className="form-footer">
           <p>
             <span>Already have an account?</span> <a href="/login">Login</a>
           </p>
-        </footer>
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,59 @@
+.slider .item {
+    height: 30rem;
+    min-width: 25rem;
+    padding-right: 40px;
+}
+
+.slider .item .desc{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.inner-slider {
+    display: flex;
+    margin-bottom: 60px;
+    
+}
+
+.slider {
+    cursor: grab;
+    overflow: hidden;
+}
+
+h2 {
+    font-weight: bolder;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+}
+
+.slider {
+    margin-left: 7.5rem;
+}
+
+.img-desc {
+    position: absolute;
+}
+
+.heart-icon {
+    padding: 8px;
+    background: transparent;
+    border: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .slider .item {
+        height: 20rem;
+        min-width: 15rem;
+    }
+
+    .slider {
+        margin-left: 0.625rem;
+    }
+}
