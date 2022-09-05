@@ -1,21 +1,20 @@
 import React from "react";
-import "./RegisterPage.css";
-import RegisterPageForm from "./RegisterPageForm";
+import "./LoginPage.css";
+import LoginPageForm from "./LoginPageForm";
 
 import Facebook from "../../images/Facebook.png";
 import Twitter from "../../images/Twitter.png";
 import Google from "../../images/Google.png";
 
-const RegisterPage = () => {
-
+const LoginPage = () => {
   return (
-    <div className="RegisterPage">
-      <div className="register-form-container">
+    <div className="LoginPage">
+      <div className="login-form-container">
         <header>
-          <h2 className="heading">Register your Account</h2>
+          <h2 className="heading">Login to your Account</h2>
           <p className="subheading">Show your artwork and get appreciated</p>
         </header>
-        <RegisterPageForm />
+        <LoginPageForm />
         <p className="or-text">------------- Or ------------- </p>
         <div className="signup-social-icons">
           <a href="/">
@@ -28,14 +27,14 @@ const RegisterPage = () => {
             <img src={Twitter} alt="Login with Twitter" />
           </a>
         </div>
-        <footer className="form-footer">
+        <div className="form-footer">
           <p>
-            <span>Already have an account?</span> <a href="/login">Login</a>
+            <span>Don't have an account?</span> <a href="/register">Sign Up</a>
           </p>
-        </footer>
+        </div>
       </div>
     </div>
   );
 };
 
-export default RegisterPage;
+export default LoginPage;
