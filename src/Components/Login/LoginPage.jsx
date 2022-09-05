@@ -27,11 +27,11 @@ const LoginPage = () => {
             <img src={Twitter} alt="Login with Twitter" />
           </a>
         </div>
-        <footer className="form-footer">
+        <div className="form-footer">
           <p>
             <span>Don't have an account?</span> <a href="/register">Sign Up</a>
           </p>
-        </footer>
+        </div>
       </div>
     </div>
   );
