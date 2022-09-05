@@ -1,9 +1,9 @@
 import { Route, Router, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
-import LoginPage from "./Components/Login/LoginPage";
-import RegisterPage from "./Components/Register/RegisterPage";
-import VotingPage from "./Components/VotingPage/VotingPage.jsx";
+import LoginPage from "./tempFOLDER/Login/LoginPage";
+import RegisterPage from "./tempFOLDER/Register/RegisterPage";
+import VotingPage from "./tempFOLDER/VotingPage/VotingPage.jsx";
 
 function App() {
   return (
