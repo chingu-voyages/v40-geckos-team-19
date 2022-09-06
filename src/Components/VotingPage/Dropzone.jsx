@@ -4,7 +4,6 @@ import { useDropzone } from "react-dropzone";
 import ImageUpload from "../../images/image-upload-icon.svg";
 
 export default function Dropzone(props) {
-  const [firebaseImage, setFirebaseImage] = useState(null);
   const [imageLoaded, setImageLoaded] = useState(false);
   const isVotingPage = props.pageMode === "voting";
 
@@ -19,7 +18,7 @@ export default function Dropzone(props) {
     props.setPreviewMode(true);
   }, []);
 
-  const { getRootProps, getInputProps, acceptedFiles, isDragActive } =
+  const { getRootProps, getInputProps, isDragActive } =
     useDropzone({ onDrop });
 
   const showPreveiw = props.previewImage?.map((file) => (

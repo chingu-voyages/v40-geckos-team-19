@@ -8,7 +8,7 @@ export default function DesignModal(props) {
   };
 
   const handleVote = () => {
-    if (props.selectedDesign == 1) {
+    if (props.selectedDesign === 1) {
       if (props.design1Voted) {
         props.unvoteDesign1();
         props.setDesign1Voted(false);
@@ -23,7 +23,7 @@ export default function DesignModal(props) {
         props.setDesign1Voted(true);
         props.setUserVoted(true);
       }
-    } else if (props.selectedDesign == 2) {
+    } else if (props.selectedDesign === 2) {
       if (props.design2Voted) {
         props.unvoteDesign2();
         props.setDesign2Voted(false);
@@ -70,15 +70,15 @@ export default function DesignModal(props) {
               animate={controlAnim}
               className="modalDesignImage"
               src={
-                props.selectedDesign == 1 ? props.design1Url : props.design2Url
+                props.selectedDesign === 1 ? props.design1Url : props.design2Url
               }
               alt=""
             />
             <div onClick={handleVote} className="modalThumbIconContainer">
               <svg
                 className={
-                  (props.design1Voted & (props.selectedDesign == 1)) |
-                  (props.design2Voted & (props.selectedDesign == 2))
+                  (props.design1Voted & (props.selectedDesign === 1)) |
+                  (props.design2Voted & (props.selectedDesign === 2))
                     ? "modalThumbIconVoted"
                     : "modalThumbIconNotVoted"
                 }
@@ -94,7 +94,7 @@ export default function DesignModal(props) {
             <div
               onClick={() => props.setSelectedDesign(1)}
               className={
-                props.selectedDesign == 1
+                props.selectedDesign === 1
                   ? "modalPreviewImageContainerActive"
                   : "modalPreviewImageContainer"
               }
@@ -108,7 +108,7 @@ export default function DesignModal(props) {
             <div
               onClick={() => props.setSelectedDesign(2)}
               className={
-                props.selectedDesign == 2
+                props.selectedDesign === 2
                   ? "modalPreviewImageContainerActive"
                   : "modalPreviewImageContainer"
               }

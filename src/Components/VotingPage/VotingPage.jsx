@@ -30,6 +30,7 @@ export default function VotingPage() {
     }
   };
   const { pageUrl } = useParams();
+  const pageMode = pageModeDefinder();
   const [design1DownloadUrl, setDesign1DownloadUrl] = useState(null);
   const [dropedImages1, setDropedImages1] = useState(null);
   const [design2DownloadUrl, setDesign2DownloadUrl] = useState(null);
@@ -41,7 +42,7 @@ export default function VotingPage() {
   const [votingPageUrl, setVotingPageUrl] = useState(pageUrl);
   const [design1Voted, setDesign1Voted] = useState(false);
   const [design2Voted, setDesign2Voted] = useState(false);
-  const [pageMode, setPageMode] = useState(pageModeDefinder);
+  // const [pageMode, setPageMode] = useState(pageModeDefinder);
   const [commentArray, setCommentArray] = useState();
   const [userVoted, setUserVoted] = useState(false);
   const [designModalIsOpen, setDesignModalIsOpen] = useState(false);
@@ -167,7 +168,7 @@ export default function VotingPage() {
       })();
     }
     return () => {};
-  }, []);
+  });
 
   return (
     <div className="votingPageContainer">
