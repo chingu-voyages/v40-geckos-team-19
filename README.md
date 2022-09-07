@@ -1,9 +1,18 @@
 # WeDesign
 
 ## Overview
+This app was created for Chingu Voyage 40.
+
+Live Link: [TBD]
 
 ## Features
-<br />
+This app includes:
+
+- Welcome page
+- Ability to sign up and log in with email/password and Google
+- Ability to upload two photos
+- Ability to vote for a photo
+- Ability to add comments
 
 ## Running the Project
 
@@ -13,7 +22,13 @@ Follow [these steps](https://docs.github.com/en/get-started/quickstart/fork-a-re
 
 ### 2. Navigate to the repo directory
 
-Once you have cloned the repo by running `git clone v40-geckos-team-19`, the next step would be to move into the cloned repo:
+Clone the repo by running:
+
+```
+git clone v40-geckos-team-19
+```
+
+the next step would be to move into the cloned repo:
 
 ```
 cd v40-geckos-team-19
@@ -34,22 +49,18 @@ npm start
 ```
 
 ## Dependencies
+This is a React app, using Firebase.
+Fonts are from Google Fonts.
 
 ## Contributors
+[@bardiahabb](https://github.com/bardiahabb)
 <br />
-<hr />
 
-#### voyage-tasks
+[@ashubly25](https://github.com/ashubly25)
+<br />
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+[@klezi10](https://github.com/klezi10)
+<br />
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
-
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
-
-> Own it & Make it your Own!
+[@Devansh-365](https://github.com/Devansh-365)
+<br />
