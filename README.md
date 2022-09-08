@@ -5,7 +5,7 @@
   <h1>WeDesign</h1>
   
   <p>
-    A platform to share your design & artworks
+    A platform to share your designs & artwork
   </p>
   
   
@@ -74,8 +74,9 @@
 <!-- TechStack -->
 ### :space_invader: Tech Stack
 
-* [![React][React.js]][React-url]
-* [![Firebase][Firebase]][Firebase-url]
+[![React][React.js]][React-url]
+<br />
+[![Firebase][Firebase]][Firebase-url]
 
 <!-- Features -->
 ### :dart: Features
@@ -102,7 +103,7 @@ Install NodeJS LTS
 <!-- Installation -->
 ### :gear: Installation
 
-1. Fork the repo(required), a star is also appretiated but optional :P
+1. Fork the repo (required), a star is also appretiated but optional :P
 2. Clone the repo
    ```sh
    git clone https://github.com/chingu-voyages/v40-geckos-team-19
