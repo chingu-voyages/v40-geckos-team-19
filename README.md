@@ -5,7 +5,7 @@
   <h1>WeDesign</h1>
   
   <p>
-    A platform share your design & artworks
+    A platform to share your design & artworks
   </p>
   
   
@@ -48,11 +48,9 @@
   * [Screenshots](#camera-screenshots)
   * [Tech Stack](#space_invader-tech-stack)
   * [Features](#dart-features)
-(#key-environment-variables)
 - [Getting Started](#toolbox-getting-started)
   * [Prerequisites](#bangbang-prerequisites)
   * [Installation](#gear-installation)
-(#triangular_flag_on_post-deployment)
 - [Contributing](#wave-contributing)
 <!-- - [FAQ](#grey_question-faq)
 - [License](#warning-license)
@@ -124,8 +122,7 @@ Install NodeJS LTS
 <a href="https://github.com/chingu-voyages/v40-geckos-team-19/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=chingu-voyages/v40-geckos-team-19" />
 </a>
-
-
+<br />
 Contributions are always welcome!
 
 
