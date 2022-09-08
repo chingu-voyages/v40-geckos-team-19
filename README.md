@@ -1,12 +1,86 @@
-# WeDesign
 
-## Overview
-This app was created for Chingu Voyage 40.
+<div align="center">
 
-Live Link: [TBD]
+  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
+  <h1>WeDesign</h1>
+  
+  <p>
+    A platform share your design & artworks
+  </p>
+  
+  
+<!-- Badges -->
+<p>
+  <a href="https://github.com/chingu-voyages/v40-geckos-team-19/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/chingu-voyages/v40-geckos-team-19" alt="contributors" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/chingu-voyages/v40-geckos-team-19" alt="last update" />
+  </a>
+  <a href="https://github.com/chingu-voyages/v40-geckos-team-19/network/members">
+    <img src="https://img.shields.io/github/forks/chingu-voyages/v40-geckos-team-19" alt="forks" />
+  </a>
+  <a href="https://github.com/chingu-voyages/v40-geckos-team-19/stargazers">
+    <img src="https://img.shields.io/github/stars/chingu-voyages/v40-geckos-team-19" alt="stars" />
+  </a>
+  <a href="https://github.com/chingu-voyages/v40-geckos-team-19/issues/">
+    <img src="https://img.shields.io/github/issues/chingu-voyages/v40-geckos-team-19" alt="open issues" />
+  </a>
+</p>
+   
+<h4>
+    <a href="https://github.com/chingu-voyages/v40-geckos-team-19/">View Demo</a>
+  <span> · </span>
+    <a href="https://github.com/chingu-voyages/v40-geckos-team-19">Documentation</a>
+  <span> · </span>
+    <a href="https://github.com/chingu-voyages/v40-geckos-team-19/issues/">Report Bug</a>
+  <span> · </span>
+    <a href="https://github.com/chingu-voyages/v40-geckos-team-19/issues/">Request Feature</a>
+  </h4>
+</div>
 
-## Features
-This app includes:
+<br />
+
+<!-- Table of Contents -->
+# :notebook_with_decorative_cover: Table of Contents
+
+- [About the Project](#star2-about-the-project)
+  * [Screenshots](#camera-screenshots)
+  * [Tech Stack](#space_invader-tech-stack)
+  * [Features](#dart-features)
+(#key-environment-variables)
+- [Getting Started](#toolbox-getting-started)
+  * [Prerequisites](#bangbang-prerequisites)
+  * [Installation](#gear-installation)
+(#triangular_flag_on_post-deployment)
+- [Contributing](#wave-contributing)
+<!-- - [FAQ](#grey_question-faq)
+- [License](#warning-license)
+- [Contact](#handshake-contact) -->
+- [Acknowledgements](#gem-acknowledgements)
+
+  
+
+<!-- About the Project -->
+## :star2: About the Project
+
+
+<!-- Screenshots -->
+### :camera: Screenshots
+
+<div align="center"> 
+  <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
+</div>
+
+
+<!-- TechStack -->
+### :space_invader: Tech Stack
+
+* [![React][React.js]][React-url]
+* [![Firebase][Firebase]][Firebase-url]
+
+<!-- Features -->
+### :dart: Features
 
 - Welcome page
 - Ability to sign up and log in with email/password and Google
@@ -14,53 +88,80 @@ This app includes:
 - Ability to vote for a photo
 - Ability to add comments
 
-## Running the Project
+<!-- Getting Started -->
+## 	:toolbox: Getting Started
 
-### 1. Fork and clone the repository
+<!-- Prerequisites -->
+### :bangbang: Prerequisites
 
-Follow [these steps](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to create a fork of this repository and clone it to your local machine.
+Install NodeJS LTS
 
-### 2. Navigate to the repo directory
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-Clone the repo by running:
+<!-- Installation -->
+### :gear: Installation
 
-```
-git clone v40-geckos-team-19
-```
+1. Fork the repo(required), a star is also appretiated but optional :P
+2. Clone the repo
+   ```sh
+   git clone https://github.com/chingu-voyages/v40-geckos-team-19
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Start the project
+   ```sh
+   npm run start
+   ```
 
-the next step would be to move into the cloned repo:
+<!-- Contributing -->
+## :wave: Contributing
 
-```
-cd v40-geckos-team-19
-```
+<a href="https://github.com/chingu-voyages/v40-geckos-team-19/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=chingu-voyages/v40-geckos-team-19" />
+</a>
 
-### 3. Install dependencies
 
-Install npm by running:
-```
-npm install
-```
+Contributions are always welcome!
 
-### 4. Run locally
 
-View the project locally by running:
-```
-npm start
-```
+<!-- FAQ -->
+<!-- ## :grey_question: FAQ
 
-## Dependencies
-This is a React app, using Firebase.
-Fonts are from Google Fonts.
+- Question 1
 
-## Contributors
-[@bardiahabb](https://github.com/bardiahabb)
-<br />
+  + Answer 1
 
-[@ashubly25](https://github.com/ashubly25)
-<br />
+- Question 2
 
-[@klezi10](https://github.com/klezi10)
-<br />
+  + Answer 2 -->
 
-[@Devansh-365](https://github.com/Devansh-365)
-<br />
+
+<!-- License -->
+<!-- ## :warning: License
+
+Distributed under the no License. See LICENSE.txt for more information. -->
+
+
+<!-- Acknowledgments -->
+## :gem: Acknowledgements
+
+Use this section to mention useful resources and libraries that you have used in your projects.
+
+ - [Shields.io](https://shields.io/)
+ - [Awesome README](https://github.com/matiassingers/awesome-readme)
+ - [Google Fonts](https://fonts.google.com/)
+ - [Figma](https://www.figma.com/)
+ - [React.js](https://reactjs.org/)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Firebase]: https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white
+[Firebase-url]: https://firebase.google.com/docs
+
