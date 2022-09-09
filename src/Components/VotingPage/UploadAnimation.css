@@ -1,0 +1,59 @@
+.uploadAnimationContainer {
+}
+
+.animationContextContainer {
+  display: flex;
+}
+
+.uploadArrowImageContainer {
+  min-width: 0px;
+}
+
+.uploadArrowImage {
+  min-height: 50px;
+  min-width: 50px;
+  margin-right: 10px;
+  /* width: 50px;
+    height: 50px; */
+  color: rgb(212, 212, 212);
+}
+
+.textAndCirclesContainer {
+}
+
+.uploadingText {
+  padding-bottom: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: large;
+  color: rgb(192, 192, 192);
+}
+
+.animatingCirclesContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.circleOne {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(212, 212, 212);
+}
+
+.circleTwo {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(199, 255, 236);
+}
+
+.circleThree {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(212, 212, 212);
+}

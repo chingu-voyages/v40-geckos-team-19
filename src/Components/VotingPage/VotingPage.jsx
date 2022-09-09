@@ -20,6 +20,7 @@ import { v4 as uuidv4 } from "uuid";
 import SimpleBarReact from "simplebar-react";
 import "simplebar/src/simplebar.css";
 import { motion, AnimatePresence } from "framer-motion";
+import UploadAnimation from "./UploadAnimation";
 
 export default function VotingPage() {
   const pageModeDefinder = () => {
@@ -261,6 +262,7 @@ export default function VotingPage() {
           ))}
         </SimpleBarReact>
       </div>
+      <UploadAnimation />
     </div>
   );
 }
