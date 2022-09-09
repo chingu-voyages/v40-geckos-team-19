@@ -1,7 +1,7 @@
 
 <div align="center">
 
-  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
+  <!-- <img src="assets/logo.png" alt="logo" width="200" height="auto" /> -->
   <h1>WeDesign</h1>
   
   <p>
