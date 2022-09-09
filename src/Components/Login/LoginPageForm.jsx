@@ -90,10 +90,10 @@ const LoginPageForm = () => {
           required
         />
         <div className="login-help">
-          <div className="remember-me">
+          {/* <div className="remember-me">
             <input type="checkbox" id="remember-me" />{" "}
             <label htmlFor="remember-me">Remember Me</label>
-          </div>
+          </div> */}
           {/* <a href="/">Forgot Password?</a> */}
         </div>
       </label>
