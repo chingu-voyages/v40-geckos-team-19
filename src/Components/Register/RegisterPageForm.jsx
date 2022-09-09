@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../../store/auth-context";
 import "./RegisterPageForm.css";
 
 const RegisterPageForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
+
+  const authCtx = useContext(AuthContext);
 
   const samePasswords = password === confirmPassword;
 
@@ -27,8 +32,6 @@ const RegisterPageForm = () => {
       alert(`Passwords don't match`);
     }
 
-    console.log(email, password, confirmPassword);
-
     fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB1EGDiPu7e-EX2I22M-d60JwUpeumzEZo",
       {
@@ -42,17 +45,29 @@ const RegisterPageForm = () => {
           "Content-Type": "application/json",
         },
       }
-    ).then((response) => {
-      if (!response.ok) {
-        return response.json().then((data) => {
-          let errorMsg = "Sorry - something went wrong!";
-          if (data && data.error && data.error.message) {
-            errorMsg = data.error.message;
-          }
-          alert(errorMsg);
-        });
-      }
-    });
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          return response.json().then((data) => {
+            let errorMsg = "Sorry - something went wrong!";
+            if (data && data.error && data.error.message) {
+              errorMsg = data.error.message;
+            }
+            alert(errorMsg);
+          });
+        }
+      })
+      .then((data) => {
+        console.log("Register successful");
+        console.log(email, password, confirmPassword);
+        authCtx.login(data.idToken);
+        navigate("/voting", { replace: true });
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
 
     setEmail("");
     setPassword("");
