@@ -30,7 +30,7 @@ const RegisterPageForm = () => {
     console.log(email, password, confirmPassword);
 
     fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAP16n5-hHHW2ZB_qYPvqaHQlX_kAScjIk",
+      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB1EGDiPu7e-EX2I22M-d60JwUpeumzEZo",
       {
         method: "POST",
         body: JSON.stringify({

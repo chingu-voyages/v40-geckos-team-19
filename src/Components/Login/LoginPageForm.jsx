@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../../store/auth-context";
 import "./LoginPageForm.css";
 
 const LoginPageForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const authCtx = useContext(AuthContext);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -17,7 +22,7 @@ const LoginPageForm = () => {
     event.preventDefault();
 
     fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAP16n5-hHHW2ZB_qYPvqaHQlX_kAScjIk",
+      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyB1EGDiPu7e-EX2I22M-d60JwUpeumzEZo",
       {
         method: "POST",
         body: JSON.stringify({
@@ -50,7 +55,8 @@ const LoginPageForm = () => {
       })
       .then((data) => {
         console.log("Login successful");
-        //Take to voting page? Managing auth state app wide - Redux or Context API?
+        authCtx.login(data.idToken);
+        navigate("/voting", { replace: true });
       })
       .catch((err) => {
         alert(err.message);
@@ -88,7 +94,7 @@ const LoginPageForm = () => {
             <input type="checkbox" id="remember-me" />{" "}
             <label htmlFor="remember-me">Remember Me</label>
           </div>
-          <a href="/">Forgot Password?</a>
+          {/* <a href="/">Forgot Password?</a> */}
         </div>
       </label>
       <div className="form-actions">
