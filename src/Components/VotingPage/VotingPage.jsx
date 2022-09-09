@@ -121,6 +121,7 @@ export default function VotingPage() {
             image1DownloadUrl: arrayUnion(downloadUrl),
           });
         });
+        return [1];
       })
     );
     await Promise.all(
@@ -134,6 +135,7 @@ export default function VotingPage() {
             image2DownloadUrl: arrayUnion(downloadUrl),
           });
         });
+        return [1];
       })
     );
   };
