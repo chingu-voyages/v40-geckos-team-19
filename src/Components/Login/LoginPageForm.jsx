@@ -98,7 +98,7 @@ const LoginPageForm = () => {
         </div>
       </label>
       <div className="form-actions">
-        <button type="submit">Login</button>
+        <button className="login-btn" type="submit">Login</button>
       </div>
     </form>
   );

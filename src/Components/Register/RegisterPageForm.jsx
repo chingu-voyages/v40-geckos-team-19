@@ -109,7 +109,7 @@ const RegisterPageForm = () => {
         />
       </label>
       <div className="form-actions">
-        <button type="submit">Register</button>
+        <button className="register-btn" type="submit">Register</button>
       </div>
     </form>
   );
