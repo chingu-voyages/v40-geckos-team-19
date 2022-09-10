@@ -11,3 +11,12 @@
   position: relative;
 }
 
+.rowmessage h1{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.rowmessage h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+}
+
