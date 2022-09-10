@@ -29,7 +29,7 @@
 </p>
    
 <h4>
-    <a href="https://github.com/chingu-voyages/v40-geckos-team-19/">View Demo</a>
+    <a href="https://v40-geckos-team-19.vercel.app/">View Demo</a>
   <span> · </span>
     <a href="https://github.com/chingu-voyages/v40-geckos-team-19">Documentation</a>
   <span> · </span>
