@@ -48,13 +48,11 @@ const LoginPageForm = () => {
               errorMsg =
                 "Email and/or password are incorrect. Please check and try again";
             }
-            console.log(data);
             throw new Error(errorMsg);
           });
         }
       })
       .then((data) => {
-        console.log("Login successful");
         authCtx.login(data.idToken);
         navigate("/voting", { replace: true });
       })
@@ -62,7 +60,6 @@ const LoginPageForm = () => {
         alert(err.message);
       });
 
-    console.log(email, password);
     setEmail("");
     setPassword("");
   };
