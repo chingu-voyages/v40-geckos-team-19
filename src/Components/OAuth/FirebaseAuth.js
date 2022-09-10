@@ -8,7 +8,7 @@ const firebaseConfig = {
   storageBucket: "wedesign-a6beb.appspot.com",
   messagingSenderId: "912017824764",
   appId: "1:912017824764:web:a99b37d83982d7d86a3079",
-  measurementId: "G-3D3XTNNL2Y"
+  measurementId: "G-3D3XTNNL2Y",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -19,9 +19,15 @@ const provider = new GoogleAuthProvider();
 export const signInWithGoogle = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
-      console.log(result);
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      window.location = '/voting'
+      console.log(token);
     })
     .catch((error) => {
-      console.log(error);
+      const errorMessage = error.message;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      alert(errorMessage);
+      console.log(credential);
     });
 };
