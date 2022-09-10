@@ -1,10 +1,7 @@
 import React from "react";
 import "./LoginPage.css";
 import LoginPageForm from "./LoginPageForm";
-
-import Facebook from "../../images/Facebook.png";
-import Twitter from "../../images/Twitter.png";
-import Google from "../../images/Google.png";
+import OAuth from "../OAuth/OAuth"
 
 const LoginPage = () => {
   return (
@@ -16,17 +13,7 @@ const LoginPage = () => {
         </header>
         <LoginPageForm />
         <p className="or-text">------------- Or ------------- </p>
-        <div className="signup-social-icons">
-          <a href="/">
-            <img src={Google} alt="Login with Google" className="google-icon" />
-          </a>
-          <a href="/">
-            <img src={Facebook} alt="Login with Facebook" />
-          </a>
-          <a href="/">
-            <img src={Twitter} alt="Login with Twitter" />
-          </a>
-        </div>
+        <OAuth />
         <div className="form-footer">
           <p>
             <span>Don't have an account?</span> <a href="/register">Sign Up</a>
