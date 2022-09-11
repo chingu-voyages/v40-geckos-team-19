@@ -77,7 +77,6 @@ const BannerRowTop = ({ title }) => {
           <h3> Show your artworks and <br/>
           get appreciated </h3>
         <img className="banner" src={Channel1} alt="logo" />
-        <img className="banner" src={Channel2} alt="logo" />
         </span>
         <div className="pic">
         
