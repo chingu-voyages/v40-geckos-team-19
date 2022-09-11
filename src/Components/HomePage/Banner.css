@@ -1,0 +1,22 @@
+.banner {
+  max-width: 100%;
+  margin: 0 0 0 250px;
+  height: auto;
+  overflow: auto;
+  postion:relative;
+}
+.rowmessage {
+  height: 100px;
+  margin-left: 160px;
+  position: relative;
+}
+
+.rowmessage h1{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.rowmessage h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+}
+

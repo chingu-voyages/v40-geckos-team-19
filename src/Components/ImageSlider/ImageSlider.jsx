@@ -3,9 +3,12 @@ import { motion } from 'framer-motion'
 import images from './images'
 import './ImageSlider.css'
 import {AiOutlineHeart} from 'react-icons/ai'
+import Header from '../HomePage/Header'
+import Banner from '../HomePage/Banner'
 
 
 const ImageSlider = () => {
+
   const [width, setWidth] = useState(0)
   const slider = useRef()
 
@@ -14,7 +17,10 @@ const ImageSlider = () => {
   }, [])
 
   return (
+    
     <motion.div ref={slider} className='slider'>
+        <Header />
+        <Banner />
         <motion.h2 
         animate={{ x: 0 }}
         className='heading'>Newly Added</motion.h2>
