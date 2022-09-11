@@ -17,10 +17,10 @@ const ImageSlider = () => {
   }, [])
 
   return (
-    
-    <motion.div ref={slider} className='slider'>
         <Header />
         <Banner />
+    <motion.div ref={slider} className='slider'>
+
         <motion.h2 
         animate={{ x: 0 }}
         className='heading'>Newly Added</motion.h2>
