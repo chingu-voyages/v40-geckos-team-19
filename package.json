@@ -15,7 +15,9 @@
     "web-vitals": "^2.1.4",
     "firebase": "^9.9.2",
     "react-dropzone": "^14.2.2",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "simplebar": "^5.3.8",
+    "simplebar-react": "^2.4.1"
   },
   "scripts": {
     "start": "react-scripts start",

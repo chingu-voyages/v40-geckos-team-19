@@ -1,0 +1,31 @@
+.votingPageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.votingPageContainer .dropzoneSectionContainer {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.votingPageContainer .commentsSectionContainer {
+  width: 35%;
+  position: sticky;
+  max-height: 100vh;
+  top: 0;
+  padding-right: 2rem;
+  padding-top: 4rem;
+}
+
+@media (min-width: 768px) {
+  .votingPageContainer {
+    flex-direction: row;
+  }
+  .votingPageContainer .dropzoneSectionContainer {
+    width: 65%;
+  }
+}

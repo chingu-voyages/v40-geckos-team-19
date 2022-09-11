@@ -14,14 +14,15 @@ function App() {
     <Routes>
       <Route path="/" exact element={<HomePage />} />
       {/* {!authCtx.isLoggedIn && ( */}
-        <Route path="/login" exact element={<LoginPage />} />
+      <Route path="/login" exact element={<LoginPage />} />
       {/* )} */}
       {/* {!authCtx.isLoggedIn && ( */}
-        <Route path="/register" exact element={<RegisterPage />} />
+      <Route path="/register" exact element={<RegisterPage />} />
       {/* )} */}
       {authCtx.isLoggedIn && (
         <Route path="/voting" exact element={<VotingPage />} />
       )}
+      <Route path="/voting/:pageUrl" element={<VotingPage />} />
     </Routes>
   );
 }

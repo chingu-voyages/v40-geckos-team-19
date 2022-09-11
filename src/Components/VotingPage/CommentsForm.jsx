@@ -12,12 +12,12 @@ export default function CommentsForm(props) {
     setFormvalue("");
   };
   return (
-    <div>
+    <div className="commentsForm">
       <form onSubmit={handleFormSubmit}>
         <textarea
+          className="commentsFormTextArea"
           value={formValue}
           onChange={(e) => handleTextChange(e)}
-          cols="60"
           rows="4"
         />
         <br />
