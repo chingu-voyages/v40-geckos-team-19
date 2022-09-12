@@ -29,7 +29,7 @@ const Banner = () => {
   useEffect(() => {
     setTimeout(() => {
       setPlayMarquee(true);
-    }, 2000);
+    }, 500);
   }, );
   return (
     <motion.div className='banner' variants={banner}>
