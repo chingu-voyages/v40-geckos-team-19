@@ -103,7 +103,7 @@ Install NodeJS LTS
 <!-- Installation -->
 ### :gear: Installation
 
-1. Fork the repo (required), a star is also appretiated but optional :P
+1. Fork the repo (required), a star is also appreciated but optional :P
 2. Clone the repo
    ```sh
    git clone https://github.com/chingu-voyages/v40-geckos-team-19
