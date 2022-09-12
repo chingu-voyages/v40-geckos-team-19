@@ -1,14 +1,13 @@
 .banner {
   max-width: 100%;
-  margin: 0 0 0 250px;
-  height: auto;
-  overflow: auto;
-  postion:relative;
+  display: block;
+  margin: 0 auto;
 }
+
 .rowmessage {
-  height: 100px;
-  margin-left: 160px;
-  position: relative;
+  height: 100vh;
+  display: block;
+  margin-left: 200px;
 }
 
 .rowmessage h1{
@@ -20,3 +19,9 @@
   font-weight: normal;
 }
 
+@media only screen and (max-width: 768px) {
+  .rowmessage {
+    height: auto;
+    margin: 0 1.5rem 1.5rem;
+  }
+}
