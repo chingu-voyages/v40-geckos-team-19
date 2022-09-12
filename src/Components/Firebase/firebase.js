@@ -7,12 +7,13 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBZtq3SLyB8IDrI3f-s0nxYWpSbMzmP7Zc",
-  authDomain: "wedesign-storage.firebaseapp.com",
-  projectId: "wedesign-storage",
-  storageBucket: "wedesign-storage.appspot.com",
-  messagingSenderId: "617225344891",
+  apiKey: "AIzaSyB1EGDiPu7e-EX2I22M-d60JwUpeumzEZo",
+  authDomain: "wedesign-a6beb.firebaseapp.com",
+  projectId: "wedesign-a6beb",
+  storageBucket: "wedesign-a6beb.appspot.com",
+  messagingSenderId: "1:912017824764:web:a99b37d83982d7d86a3079",
   appId: "1:617225344891:web:f241c7c1cdc1cf5b56cfde",
+  measurementId: "G-3D3XTNNL2Y",
 };
 
 // Initialize Firebase
