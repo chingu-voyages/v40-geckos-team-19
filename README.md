@@ -67,7 +67,7 @@
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
+  <img src='./public/screenshot-landing.png' alt="screenshot" />
 </div>
 
 
@@ -103,7 +103,7 @@ Install NodeJS LTS
 <!-- Installation -->
 ### :gear: Installation
 
-1. Fork the repo (required), a star is also appretiated but optional :P
+1. Fork the repo (required), a star is also appreciated but optional :P
 2. Clone the repo
    ```sh
    git clone https://github.com/chingu-voyages/v40-geckos-team-19
