@@ -19,13 +19,15 @@ const Header = () => {
           <a href='/login'>Login</a>  
           </li>
          
-        </nav>
-        <div className='title'>
+       
+        <li className='title'>
           <a href='.'>WeDesign</a>
-        </div>
-      
+        </li>
+      <li>
         <button className='btn'>
         <a href='/voting'>Create Poll</a>  </button>
+        </li>
+        </nav>
       </div>
     </motion.div>
   );
