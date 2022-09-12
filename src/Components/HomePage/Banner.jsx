@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Channel1 from "../../assets/item1.svg";
-import Channel2 from "../../assets/item2.svg";
 import './Banner.css' ;
 
 const banner = {
@@ -25,7 +24,7 @@ const letterAni = {
 };
 
 const Banner = () => {
-  const [ setPlayMarquee] = useState(false);
+  const [playMarquee, setPlayMarquee] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
