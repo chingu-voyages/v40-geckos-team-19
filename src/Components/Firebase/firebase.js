@@ -13,7 +13,7 @@ const firebaseConfig = {
   projectId: "wedesign-a6beb",
   storageBucket: "wedesign-a6beb.appspot.com",
   messagingSenderId: "1:912017824764:web:a99b37d83982d7d86a3079",
-  appId: "1:617225344891:web:f241c7c1cdc1cf5b56cfde",
+  appId: "1:912017824764:web:a99b37d83982d7d86a3079",
   measurementId: "G-3D3XTNNL2Y",
 };
 
