@@ -73,7 +73,7 @@ const BannerRowTop = ({ title }) => {
         className='row-col'>
         <span className='rowmessage'>
         <h1>Show your art</h1>
-          <h3> Show your artworks and <br/>
+          <h3> Show your artwork and <br/>
           get appreciated </h3>
         <img className="banner" src={Channel1} alt="logo" />
         </span>
