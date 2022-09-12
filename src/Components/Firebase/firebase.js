@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp, getApps, getApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -21,4 +22,23 @@ const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const db = getFirestore();
 const storage = getStorage();
 
-export { app, db, storage };
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+const signInWithGoogle = () => {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      window.location = "/voting";
+      console.log(token);
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      alert(errorMessage);
+      console.log(credential);
+    });
+};
+
+export { app, auth, db, storage, signInWithGoogle };

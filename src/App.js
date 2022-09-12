@@ -19,9 +19,9 @@ function App() {
       {/* {!authCtx.isLoggedIn && ( */}
       <Route path="/register" exact element={<RegisterPage />} />
       {/* )} */}
-      {/* {authCtx.isLoggedIn && ( */}
+      {authCtx.isLoggedIn && (
         <Route path="/voting" exact element={<VotingPage />} />
-      {/* )} */}
+      )}
       <Route path="/voting/:pageUrl" element={<VotingPage />} />
     </Routes>
   );
