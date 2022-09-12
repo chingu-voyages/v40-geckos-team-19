@@ -6,10 +6,10 @@
 
 .rowmessage {
   display: block;
-  margin-left: 200px;
+  margin: 2rem 7.5rem;
 }
 
-.rowmessage h1{
+.rowmessage h1 {
   font-family: 'Montserrat', sans-serif;
 }
 
