@@ -1,5 +1,5 @@
 import React from "react";
-import { signInWithGoogle } from "./FirebaseAuth";
+import { signInWithGoogle } from "../Firebase/firebase";
 import "./OAuth.css";
 
 const OAuth = () => {

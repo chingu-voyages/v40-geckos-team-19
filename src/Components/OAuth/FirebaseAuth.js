@@ -1,33 +1,35 @@
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+//FILE TO BE DELETED
 
-const firebaseConfig = {
-  apiKey: "AIzaSyB1EGDiPu7e-EX2I22M-d60JwUpeumzEZo",
-  authDomain: "wedesign-a6beb.firebaseapp.com",
-  projectId: "wedesign-a6beb",
-  storageBucket: "wedesign-a6beb.appspot.com",
-  messagingSenderId: "912017824764",
-  appId: "1:912017824764:web:a99b37d83982d7d86a3079",
-  measurementId: "G-3D3XTNNL2Y",
-};
+// import { initializeApp } from "firebase/app";
+// import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+// const firebaseConfig = {
+//   apiKey: "AIzaSyB1EGDiPu7e-EX2I22M-d60JwUpeumzEZo",
+//   authDomain: "wedesign-a6beb.firebaseapp.com",
+//   projectId: "wedesign-a6beb",
+//   storageBucket: "wedesign-a6beb.appspot.com",
+//   messagingSenderId: "912017824764",
+//   appId: "1:912017824764:web:a99b37d83982d7d86a3079",
+//   measurementId: "G-3D3XTNNL2Y",
+// };
 
-const provider = new GoogleAuthProvider();
+// const app = initializeApp(firebaseConfig);
+// export const auth = getAuth(app);
 
-export const signInWithGoogle = () => {
-  signInWithPopup(auth, provider)
-    .then((result) => {
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      window.location = '/voting'
-      console.log(token);
-    })
-    .catch((error) => {
-      const errorMessage = error.message;
-      const credential = GoogleAuthProvider.credentialFromError(error);
-      alert(errorMessage);
-      console.log(credential);
-    });
-};
+// const provider = new GoogleAuthProvider();
+
+// export const signInWithGoogle = () => {
+//   signInWithPopup(auth, provider)
+//     .then((result) => {
+//       const credential = GoogleAuthProvider.credentialFromResult(result);
+//       const token = credential.accessToken;
+//       window.location = '/voting'
+//       console.log(token);
+//     })
+//     .catch((error) => {
+//       const errorMessage = error.message;
+//       const credential = GoogleAuthProvider.credentialFromError(error);
+//       alert(errorMessage);
+//       console.log(credential);
+//     });
+// };
