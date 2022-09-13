@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 import "./RegisterPageForm.css";
 
@@ -7,7 +6,6 @@ const RegisterPageForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const navigate = useNavigate();
 
   const authCtx = useContext(AuthContext);
 
@@ -49,10 +47,7 @@ const RegisterPageForm = () => {
       .then((response) => {
         if (response.ok) {
           return response.json().then((data) => {
-            console.log("Register successful");
-            console.log(email, password, confirmPassword);
             authCtx.login(data.idToken);
-            // navigate("/voting", { replace: true });
             window.location = "/voting";
           });
         } else {
