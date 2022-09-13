@@ -48,7 +48,13 @@ const RegisterPageForm = () => {
     )
       .then((response) => {
         if (response.ok) {
-          return response.json();
+          return response.json().then((data) => {
+            console.log("Register successful");
+            console.log(email, password, confirmPassword);
+            authCtx.login(data.idToken);
+            // navigate("/voting", { replace: true });
+            window.location = "/voting";
+          });
         } else {
           return response.json().then((data) => {
             let errorMsg = "Sorry - something went wrong!";
@@ -58,12 +64,6 @@ const RegisterPageForm = () => {
             alert(errorMsg);
           });
         }
-      })
-      .then((data) => {
-        console.log("Register successful");
-        console.log(email, password, confirmPassword);
-        authCtx.login(data.idToken);
-        navigate("/voting", { replace: true });
       })
       .catch((err) => {
         alert(err.message);
@@ -109,7 +109,9 @@ const RegisterPageForm = () => {
         />
       </label>
       <div className="form-actions">
-        <button className="register-btn" type="submit">Register</button>
+        <button className="register-btn" type="submit">
+          Register
+        </button>
       </div>
     </form>
   );
