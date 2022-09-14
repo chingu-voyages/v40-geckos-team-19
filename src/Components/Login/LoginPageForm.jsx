@@ -1,12 +1,10 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 import "./LoginPageForm.css";
 
 const LoginPageForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
 
   const authCtx = useContext(AuthContext);
 
@@ -37,7 +35,10 @@ const LoginPageForm = () => {
     )
       .then((response) => {
         if (response.ok) {
-          return response.json();
+          return response.json().then((data) => {
+            authCtx.login(data.idToken);
+            window.location = "/voting";
+          });
         } else {
           return response.json().then((data) => {
             let errorMsg = "Sorry - something went wrong!";
@@ -51,10 +52,6 @@ const LoginPageForm = () => {
             throw new Error(errorMsg);
           });
         }
-      })
-      .then((data) => {
-        authCtx.login(data.idToken);
-        navigate("/voting", { replace: true });
       })
       .catch((err) => {
         alert(err.message);
@@ -95,7 +92,9 @@ const LoginPageForm = () => {
         </div>
       </label>
       <div className="form-actions">
-        <button className="login-btn" type="submit">Login</button>
+        <button className="login-btn" type="submit">
+          Login
+        </button>
       </div>
     </form>
   );

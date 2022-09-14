@@ -25,13 +25,13 @@ const storage = getStorage(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-const signInWithGoogle = () => {
-  signInWithPopup(auth, provider)
+const signInWithGoogle = async () => {
+  await signInWithPopup(auth, provider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
+      localStorage.setItem("token", token);
       window.location = "/voting";
-      console.log(token);
     })
     .catch((error) => {
       const errorMessage = error.message;
@@ -39,6 +39,7 @@ const signInWithGoogle = () => {
       alert(errorMessage);
       console.log(credential);
     });
+  
 };
 
 export { app, auth, db, storage, signInWithGoogle };
