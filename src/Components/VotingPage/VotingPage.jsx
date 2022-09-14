@@ -20,6 +20,8 @@ import { v4 as uuidv4 } from "uuid";
 import SimpleBarReact from "simplebar-react";
 import "simplebar/src/simplebar.css";
 import { motion, AnimatePresence } from "framer-motion";
+import VotingPageURLProvider from "./VotingPageURLProvider";
+import CreatingGuide from "./CreatingGuide";
 import UploadAnimation from "./UploadAnimation";
 
 export default function VotingPage() {
@@ -48,6 +50,8 @@ export default function VotingPage() {
   const [userVoted, setUserVoted] = useState(false);
   const [designModalIsOpen, setDesignModalIsOpen] = useState(false);
   const [selectedDesignInModal, setSelectedDesignInModal] = useState(2);
+  const [generatedVotingPageURL, setGeneratedVotingPageURL] = useState("");
+  const [creatingVotePageStep, setCreatingVotePageStep] = useState(1);
 
   const voteDesign1 = async () => {
     const docRef = doc(db, "VotingPages", votingPageUrl);
@@ -99,6 +103,7 @@ export default function VotingPage() {
   const uploadImages = async () => {
     const generatedPageUrl = uuidv4();
     setVotingPageUrl(generatedPageUrl);
+    setGeneratedVotingPageURL(generatedPageUrl);
     console.log("generated page url : \n" + generatedPageUrl);
     await setDoc(doc(db, "VotingPages", generatedPageUrl), {
       timestamp: serverTimestamp(),
@@ -122,6 +127,7 @@ export default function VotingPage() {
             image1DownloadUrl: arrayUnion(downloadUrl),
           });
         });
+        return [1];
       })
     );
     await Promise.all(
@@ -135,6 +141,7 @@ export default function VotingPage() {
             image2DownloadUrl: arrayUnion(downloadUrl),
           });
         });
+        return [1];
       })
     );
   };
@@ -155,6 +162,21 @@ export default function VotingPage() {
     setCommentArray(docSnap.data().comments);
   };
 
+  const handleCreatepageSteps = () => {
+    if ((dropedImages1 === null) | (dropedImages2 === null)) {
+      setCreatingVotePageStep(1);
+    } else if (
+      (dropedImages1 !== null) &
+      (dropedImages2 !== null) &
+      (design1DownloadUrl === null) &
+      (design2DownloadUrl === null)
+    ) {
+      setCreatingVotePageStep(2);
+    } else if ((design1DownloadUrl !== null) & (design2DownloadUrl !== null)) {
+      setCreatingVotePageStep(3);
+    }
+  };
+
   useEffect(() => {
     if (pageMode === "voting") {
       (async () => {
@@ -169,7 +191,11 @@ export default function VotingPage() {
       })();
     }
     return () => {};
-  });
+  }, []);
+
+  useEffect(() => {
+    handleCreatepageSteps();
+  }, [dropedImages1, dropedImages2, design1DownloadUrl, design2DownloadUrl]);
 
   return (
     <div className="votingPageContainer">
@@ -204,6 +230,9 @@ export default function VotingPage() {
         )}
       </AnimatePresence>
       <div className="dropzoneSectionContainer">
+        {pageMode === "voting" && (
+          <div className="noticeText">Vote To See The Result !</div>
+        )}
         <Dropzone
           vote={voteDesign1}
           unvote={unvoteDesign1}
@@ -245,7 +274,28 @@ export default function VotingPage() {
       </div>
       <div className="commentsSectionContainer">
         {!(pageMode === "voting") ? (
-          <button onClick={uploadImages}>click to upload</button>
+          creatingVotePageStep === 3 ? (
+            <div>
+              <CreatingGuide step={creatingVotePageStep} />
+              <VotingPageURLProvider generatedURL={generatedVotingPageURL} />
+            </div>
+          ) : (
+            <div>
+              <CreatingGuide step={creatingVotePageStep} />
+              <button
+                className="uploadButton"
+                onClick={uploadImages}
+                style={
+                  (dropedImages1 == null) | (dropedImages2 == null)
+                    ? { backgroundColor: "gray", color: "white" }
+                    : {}
+                }
+                disabled={(dropedImages1 == null) | (dropedImages2 == null)}
+              >
+                Upload Designs
+              </button>
+            </div>
+          )
         ) : (
           <CommentsForm sendComment={sendComment} />
         )}

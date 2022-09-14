@@ -4,8 +4,8 @@ import images from './images'
 import './ImageSlider.css'
 import {AiOutlineHeart} from 'react-icons/ai'
 
-
 const ImageSlider = () => {
+
   const [width, setWidth] = useState(0)
   const slider = useRef()
 
@@ -14,6 +14,7 @@ const ImageSlider = () => {
   }, [])
 
   return (
+        
     <motion.div ref={slider} className='slider'>
         <motion.h2 
         animate={{ x: 0 }}

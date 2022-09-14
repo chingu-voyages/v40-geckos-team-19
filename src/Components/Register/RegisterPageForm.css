@@ -31,7 +31,7 @@
   font-weight: 400;
 }
 
-.form-actions button {
+.form-actions .register-btn {
   display: block;
   width: 100%;
   color: #ffffff;
@@ -43,4 +43,9 @@
   justify-content: center;
   cursor: pointer;
   margin-bottom: 0;
+}
+
+.form-actions .register-btn:hover {
+  background-color: #ffffff;
+  color: #1e232c;
 }

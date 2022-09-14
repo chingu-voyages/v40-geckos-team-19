@@ -60,7 +60,7 @@
   margin: 10px 0 10px -6px;
 }
 
-.form-actions button {
+.form-actions .login-btn {
   display: block;
   width: 100%;
   color: #ffffff;
@@ -72,6 +72,12 @@
   justify-content: center;
   cursor: pointer;
   margin-bottom: 0;
+  transition: all 200ms ease-in-out;
+}
+
+.form-actions .login-btn:hover {
+  background-color: #ffffff;
+  color: #1e232c;
 }
 
 .login-help a {

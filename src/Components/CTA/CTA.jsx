@@ -7,7 +7,7 @@ const CTA = () => {
         <div>
             <h3>Always be <br /> inspired</h3>
             <p>Receive updates about new <br /> and best design posts.</p>
-            <button className='btn'>Join WeDesign</button>
+            <button>Join WeDesign</button>
         </div>
     </div>
   )

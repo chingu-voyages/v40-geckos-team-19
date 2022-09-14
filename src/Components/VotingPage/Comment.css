@@ -1,4 +1,5 @@
 .commentContainer {
+  width: 100%;
   padding: 20px;
   padding-right: 30px;
 }
@@ -30,6 +31,10 @@
 }
 .commentContainer .commenterName {
   padding-left: 1rem;
+}
+
+.commentContainer .commentDate{
+  text-align: right;
 }
 
 .commentContainer .commentText {

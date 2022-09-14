@@ -1,0 +1,31 @@
+.guideContainer {
+  width: 80%;
+  padding-left: 20px;
+}
+
+.guideContainer .guideStepsCounterText {
+  color: #1e232c;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.guideContainer .guideStepsList {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+.guideContainer .guideStep1Conrtainer {
+}
+.guideContainer .guideStepsTitle {
+  color: white;
+  background-color: #1e232c;
+  padding: 5px 15px;
+  font-weight: 700;
+  width: fit-content;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .guideContainer {
+    padding-left: 0px;
+  }
+}
