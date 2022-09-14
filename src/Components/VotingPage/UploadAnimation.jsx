@@ -14,17 +14,17 @@ export default function UploadAnimation(props) {
           <motion.div className="animatingCirclesContainer">
             <motion.div
               animate={{ opacity: 0 }}
-              transition={{ yoyo: Infinity, duration: 0.5 }}
+              transition={{ repeat: Infinity, duration: 1 }}
               className="circleOne"
             ></motion.div>
             <motion.div
               animate={{ opacity: 0 }}
-              transition={{ yoyo: Infinity, duration: 0.5, delay: 0.25 }}
+              transition={{ repeat: Infinity, duration: 1, delay: 0.25 }}
               className="circleTwo"
             ></motion.div>
             <motion.div
               animate={{ opacity: 0 }}
-              transition={{ yoyo: Infinity, duration: 0.5, delay: 0.5 }}
+              transition={{ repeat: Infinity, duration: 1, delay: 0.5 }}
               className="circleThree"
             ></motion.div>
           </motion.div>
