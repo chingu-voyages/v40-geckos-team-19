@@ -22,7 +22,6 @@ import "simplebar/src/simplebar.css";
 import { motion, AnimatePresence } from "framer-motion";
 import VotingPageURLProvider from "./VotingPageURLProvider";
 import CreatingGuide from "./CreatingGuide";
-import UploadAnimation from "./UploadAnimation";
 
 export default function VotingPage() {
   const pageModeDefinder = () => {
@@ -52,6 +51,7 @@ export default function VotingPage() {
   const [selectedDesignInModal, setSelectedDesignInModal] = useState(2);
   const [generatedVotingPageURL, setGeneratedVotingPageURL] = useState("");
   const [creatingVotePageStep, setCreatingVotePageStep] = useState(1);
+  const [uploadingStatus, setUploadingStatus] = useState(false);
 
   const voteDesign1 = async () => {
     const docRef = doc(db, "VotingPages", votingPageUrl);
@@ -104,7 +104,7 @@ export default function VotingPage() {
     const generatedPageUrl = uuidv4();
     setVotingPageUrl(generatedPageUrl);
     setGeneratedVotingPageURL(generatedPageUrl);
-    console.log("generated page url : \n" + generatedPageUrl);
+    setUploadingStatus(true);
     await setDoc(doc(db, "VotingPages", generatedPageUrl), {
       timestamp: serverTimestamp(),
       userID: "12345",
@@ -251,6 +251,7 @@ export default function VotingPage() {
           userVoted={userVoted}
           setModalState={setDesignModalIsOpen}
           setSelectedDesign={setSelectedDesignInModal}
+          uploading={uploadingStatus}
         />
         <Dropzone
           vote={voteDesign2}
@@ -270,6 +271,7 @@ export default function VotingPage() {
           userVoted={userVoted}
           setModalState={setDesignModalIsOpen}
           setSelectedDesign={setSelectedDesignInModal}
+          uploading={uploadingStatus}
         />
       </div>
       <div className="commentsSectionContainer">
@@ -312,7 +314,6 @@ export default function VotingPage() {
           ))}
         </SimpleBarReact>
       </div>
-      <UploadAnimation />
     </div>
   );
 }

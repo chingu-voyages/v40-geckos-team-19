@@ -1,5 +1,5 @@
 import "./UploadAnimation.css";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { HiCloudUpload } from "react-icons/hi";
 
 export default function UploadAnimation(props) {

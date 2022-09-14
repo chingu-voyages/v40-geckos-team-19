@@ -2,6 +2,7 @@ import "./Dropzone.css";
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import ImageUpload from "../../images/image-upload-icon.svg";
+import UploadAnimation from "./UploadAnimation";
 
 export default function Dropzone(props) {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -22,6 +23,7 @@ export default function Dropzone(props) {
 
   const showPreveiw = props.previewImage?.map((file) => (
     <div key={file.preview} className="previewImageContainer">
+      {props.uploading && <UploadAnimation />}
       <div className="previewNoteContainer">
         <div className="previewModeDot"></div>
         <div className="noteText">preview</div>
@@ -153,7 +155,11 @@ export default function Dropzone(props) {
                 showPreveiw
               ) : (
                 <div className="dropzonePlaceholderContainer">
-                  <img style={{ width: "100px", marginBottom:"10px" }} src={ImageUpload} alt="" />
+                  <img
+                    style={{ width: "100px", marginBottom: "10px" }}
+                    src={ImageUpload}
+                    alt=""
+                  />
                   <div>Design {props.designNumber}</div>
                   <div>Drag and Drop</div>
                   <div>Or click to choose file</div>
