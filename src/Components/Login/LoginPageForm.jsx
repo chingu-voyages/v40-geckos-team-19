@@ -35,10 +35,10 @@ const LoginPageForm = () => {
     )
       .then((response) => {
         if (response.ok) {
-          return response.json().then(data => {
+          return response.json().then((data) => {
             authCtx.login(data.idToken);
-            window.location = '/voting';
-          })
+            window.location = "/voting";
+          });
         } else {
           return response.json().then((data) => {
             let errorMsg = "Sorry - something went wrong!";
@@ -92,7 +92,9 @@ const LoginPageForm = () => {
         </div>
       </label>
       <div className="form-actions">
-        <button className="login-btn" type="submit">Login</button>
+        <button className="login-btn" type="submit">
+          Login
+        </button>
       </div>
     </form>
   );
