@@ -18,8 +18,7 @@ export default function Dropzone(props) {
     props.setPreviewMode(true);
   }, []);
 
-  const { getRootProps, getInputProps, isDragActive } =
-    useDropzone({ onDrop });
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   const showPreveiw = props.previewImage?.map((file) => (
     <div key={file.preview} className="previewImageContainer">
@@ -154,8 +153,11 @@ export default function Dropzone(props) {
                 showPreveiw
               ) : (
                 <div className="dropzonePlaceholderContainer">
-                  <img style={{ width: "100px" }} src={ImageUpload} alt="" />
-                  <div>Upload Designe {props.designNumber}</div>
+                  <img style={{ width: "100px", marginBottom:"10px" }} src={ImageUpload} alt="" />
+                  <div>Design {props.designNumber}</div>
+                  <div>Drag and Drop</div>
+                  <div>Or click to choose file</div>
+
                   <div>Max Size: 5Mb</div>
                   <div>Best Aspect: 3:2</div>
                 </div>
