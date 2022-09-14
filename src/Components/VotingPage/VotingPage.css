@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .votingPageContainer .dropzoneSectionContainer {
@@ -10,15 +11,62 @@
   padding-right: 2rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.votingPageContainer .noticeText {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  font-size: 20px;
+  border: solid 1px #1e232c;
 }
 
 .votingPageContainer .commentsSectionContainer {
-  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 30px;
+  width: 100%;
   position: sticky;
   max-height: 100vh;
   top: 0;
   padding-right: 2rem;
+  padding-left: 1rem;
   padding-top: 4rem;
+}
+
+.uploadButton {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 13px 10px 12px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 100%;
+  color: #ffffff;
+  background-color: #1e232c;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 25px;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 0;
+  transition: all 200ms ease-in-out;
+}
+
+@media (hover: hover) {
+  .uploadButton:hover {
+    background-color: #ffffff;
+    color: #1e232c;
+  }
 }
 
 @media (min-width: 768px) {
@@ -27,5 +75,8 @@
   }
   .votingPageContainer .dropzoneSectionContainer {
     width: 65%;
+  }
+  .votingPageContainer .commentsSectionContainer {
+    width: 35%;
   }
 }

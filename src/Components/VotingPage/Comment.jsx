@@ -14,7 +14,7 @@ export default function Comment(props) {
           </div>
           <div className="commenterName">{props.commenterName}</div>
         </div>
-        <div>{props.commentTime.toDate().toUTCString()}</div>
+        <div className="commentDate">{props.commentTime.toDate().toUTCString()}</div>
       </div>
       <div className="commentText">{props.comment}</div>
     </div>

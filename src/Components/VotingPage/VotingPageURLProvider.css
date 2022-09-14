@@ -1,0 +1,91 @@
+.votingPageURLProviderContainer {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.votingPageURLProviderContainer .mainPartTitle {
+  font-weight: 600;
+  margin-bottom: 4px;
+  padding-left: 6px;
+  background-color: #1e232c;
+  width: fit-content;
+  color: white;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.votingPageURLProviderContainer .URLProviderMainPartContainer {
+  border-radius: 12px;
+  border: solid 1px #1e232c;
+  width: 300px;
+  height: fit-content;
+  display: flex;
+  overflow: hidden;
+}
+
+.URLContainer {
+  padding: 8px;
+  width: 85%;
+  word-wrap: break-word;
+}
+
+.buttonsContainer {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #1e232c; */
+}
+
+.goToPageButtonLinkContainer {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px;
+  background-color: #1e232c;
+  border-bottom: solid 1px white;
+  border-left: solid 1px #1e232c;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  height: 50%;
+}
+
+.goToPageIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.copyButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px;
+  background-color: #1e232c;
+  border-left: solid 1px #1e232c;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  height: 50%;
+  text-decoration: none;
+}
+
+.copyIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* .votingPageURLProviderContainer .socialShareContainer {
+} */
+
+@media (hover: hover) {
+  .goToPageButtonLinkContainer:hover {
+    cursor: pointer;
+    background-color: white;
+    border-left: solid 1px #1e232c;
+    color: #1e232c;
+  }
+  .copyButton:hover {
+    cursor: pointer;
+    background-color: white;
+    border-left: solid 1px #1e232c;
+    color: #1e232c;
+  }
+}

@@ -1,3 +1,37 @@
+.commentsForm {
+  margin-bottom: 20px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
 .commentsForm .commentsFormTextArea {
   width: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  padding: 5px;
+}
+
+.commentsForm .commentFormSendButton {
+  max-width: 300px;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 13px 10px 12px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 100%;
+  color: #ffffff;
+  background-color: #1e232c;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 25px;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 0;
+  transition: all 200ms ease-in-out;
+}
+
+@media (hover: hover) {
+  .commentsForm .commentFormSendButton:hover {
+    background-color: #ffffff;
+    color: #1e232c;
+  }
 }

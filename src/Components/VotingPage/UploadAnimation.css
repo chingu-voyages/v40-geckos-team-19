@@ -1,0 +1,75 @@
+.uploadAnimationContainer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(100, 100, 100, 0.6);
+  backdrop-filter: blur(2px);
+  padding: 20px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.uploadAnimationContainer .animationContextContainer {
+  display: flex;
+}
+
+.uploadAnimationContainer .uploadArrowImageContainer {
+  min-width: 0px;
+}
+
+.uploadAnimationContainer .uploadArrowImage {
+  min-height: 30px;
+  min-width: 30px;
+  margin-right: 10px;
+  /* width: 50px;
+    height: 50px; */
+  color: rgb(212, 212, 212);
+}
+
+.uploadAnimationContainer .uploadingText {
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: large;
+  color: rgb(238, 238, 238);
+}
+
+.uploadAnimationContainer .animatingCirclesContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.uploadAnimationContainer .circleOne {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(212, 212, 212);
+}
+
+.uploadAnimationContainer .circleTwo {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(199, 255, 236);
+}
+
+.uploadAnimationContainer .circleThree {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(212, 212, 212);
+}
+
+@media (min-width: 768px) {
+  .uploadAnimationContainer .uploadArrowImage {
+    min-height: 50px;
+    min-width: 50px;
+  }
+  .uploadAnimationContainer .uploadAnimationContainer {
+    top: 20px;
+    left: 20px;
+  }
+}

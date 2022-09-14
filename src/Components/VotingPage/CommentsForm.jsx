@@ -13,6 +13,7 @@ export default function CommentsForm(props) {
   };
   return (
     <div className="commentsForm">
+      
       <form onSubmit={handleFormSubmit}>
         <textarea
           className="commentsFormTextArea"
@@ -21,7 +22,7 @@ export default function CommentsForm(props) {
           rows="4"
         />
         <br />
-        <input type="submit" value="send comment" />
+        <input className="commentFormSendButton" type="submit" value="Send Comment" />
       </form>
     </div>
   );
