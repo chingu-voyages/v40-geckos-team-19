@@ -1,12 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import "./VotingPage.css";
+import "../Components/VotingPage/VotingPage.css";
 import { useParams } from "react-router-dom";
-import Dropzone from "./Dropzone";
-import CommentsForm from "./CommentsForm";
-import Comment from "./Comment";
-import DesignModal from "./DesignModal";
-import { db, storage } from "../Firebase/firebase.js";
+import Dropzone from "../Components/VotingPage/Dropzone";
+import CommentsForm from "../Components/VotingPage/CommentsForm";
+import Comment from "../Components/VotingPage/Comment";
+import DesignModal from "../Components/VotingPage/DesignModal";
+import { db, storage } from "../Components/Firebase/firebase";
 import {
   setDoc,
   doc,
@@ -20,8 +20,8 @@ import { v4 as uuidv4 } from "uuid";
 import SimpleBarReact from "simplebar-react";
 import "simplebar/src/simplebar.css";
 import { motion, AnimatePresence } from "framer-motion";
-import VotingPageURLProvider from "./VotingPageURLProvider";
-import CreatingGuide from "./CreatingGuide";
+import VotingPageURLProvider from "../Components/VotingPage/VotingPageURLProvider";
+import CreatingGuide from "../Components/VotingPage/CreatingGuide";
 
 export default function VotingPage() {
   const pageModeDefinder = () => {
