@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import AuthContext from "../../store/auth-context";
 import "./Header.css";
@@ -20,15 +21,17 @@ const Header = () => {
       <div className="header-inner">
         <nav className="nav">
           <li>
-            <a href="/login">Login</a>
+            <NavLink to="/login">Login</NavLink>
           </li>
 
           <li className="title">
-            <a href=".">WeDesign</a>
+            <NavLink to="/">WeDesign</NavLink>
           </li>
           <li>
             <button className="btn">
-              <a href={authCtx.isLoggedIn ? "/voting" : "/login"}>Create Poll</a>{" "}
+              <NavLink to={authCtx.isLoggedIn ? "/voting" : "/login"}>
+                Create Poll
+              </NavLink>
             </button>
           </li>
         </nav>
