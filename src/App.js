@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { Route, Router, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
-import LoginPage from "./Components/Login/LoginPage";
-import RegisterPage from "./Components/Register/RegisterPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 import VotingPage from "./Components/VotingPage/VotingPage.jsx";
 import AuthContext from "./store/auth-context";
 

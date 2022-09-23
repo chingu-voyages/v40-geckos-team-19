@@ -1,7 +1,7 @@
 import React from "react";
-import OAuth from "../OAuth/OAuth"
-import "./RegisterPage.css";
-import RegisterPageForm from "./RegisterPageForm";
+import OAuth from "../Components/OAuth/OAuth"
+import "../Components/Register/RegisterPage.css";
+import RegisterPageForm from "../Components/Register/RegisterPageForm";
 
 const RegisterPage = () => {
   return (
