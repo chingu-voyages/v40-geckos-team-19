@@ -7,6 +7,16 @@ import "./Header.css";
 const Header = () => {
   const authCtx = useContext(AuthContext);
 
+  function handleLogout(event) {
+    event.preventDefault();
+    if (authCtx.isLoggedIn) {
+      authCtx.logout();
+      window.location = "/";
+    } else {
+      window.location = "/login";
+    }
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -180 }}
@@ -21,7 +31,11 @@ const Header = () => {
       <div className="header-inner">
         <nav className="nav">
           <li>
-            <NavLink to="/login">Login</NavLink>
+            {/* <button type="submit"> */}
+            <NavLink onClick={handleLogout} to="/login">
+              {authCtx.isLoggedIn ? "Logout" : "Login"}
+            </NavLink>
+            {/* </button> */}
           </li>
 
           <li className="title">
