@@ -48,7 +48,7 @@ const RegisterPageForm = () => {
         if (response.ok) {
           return response.json().then((data) => {
             authCtx.login(data.idToken);
-            window.location = "/voting";
+            window.location = "/";
           });
         } else {
           return response.json().then((data) => {

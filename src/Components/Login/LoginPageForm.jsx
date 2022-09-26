@@ -39,7 +39,7 @@ const LoginPageForm = () => {
             const expirationTime = new Date(new Date().getTime() + (+data.expiresIn * 1000))
             //converted from seconds to millseconds by *1000 - autologout after 1 hour
             authCtx.login(data.idToken, expirationTime.toISOString());
-            window.location = "/voting";
+            window.location = "/";
           });
         } else {
           return response.json().then((data) => {
