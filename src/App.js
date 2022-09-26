@@ -16,12 +16,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" exact element={<HomePage />} />
-        {/* {!authCtx.isLoggedIn && ( */}
         <Route path="/login" exact element={<LoginPage />} />
-        {/* )} */}
-        {/* {!authCtx.isLoggedIn && ( */}
         <Route path="/register" exact element={<RegisterPage />} />
-        {/* )} */}
         {authCtx.isLoggedIn && (
           <Route path="/voting" exact element={<VotingPage />} />
         )}
