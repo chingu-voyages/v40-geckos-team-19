@@ -31,22 +31,20 @@ const Header = () => {
       <div className="header-inner">
         <nav className="nav">
           <li>
-            {/* <button type="submit"> */}
             <NavLink onClick={handleLogout} to="/login">
               {authCtx.isLoggedIn ? "Logout" : "Login"}
             </NavLink>
-            {/* </button> */}
           </li>
 
           <li className="title">
             <NavLink to="/">WeDesign</NavLink>
           </li>
           <li>
-            <button className="btn">
-              <NavLink to={authCtx.isLoggedIn ? "/voting" : "/login"}>
+            {authCtx.isLoggedIn && <button className="btn">
+              <NavLink to="/voting">
                 Create Poll
               </NavLink>
-            </button>
+            </button>}
           </li>
         </nav>
       </div>
