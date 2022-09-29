@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Components/Header/Header";
 import OAuth from "../Components/OAuth/OAuth"
 import "../Components/Register/RegisterPage.css";
 import RegisterPageForm from "../Components/Register/RegisterPageForm";
@@ -7,7 +6,6 @@ import RegisterPageForm from "../Components/Register/RegisterPageForm";
 const RegisterPage = () => {
   return (
     <div className="RegisterPage">
-      <Header />
       <div className="register-form-container">
         <header>
           <h2 className="heading">Register your Account</h2>

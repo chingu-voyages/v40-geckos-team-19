@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Components/Header/Header";
 import "../Components/Login/LoginPage.css";
 import LoginPageForm from "../Components/Login/LoginPageForm";
 import OAuth from "../Components/OAuth/OAuth"
@@ -7,7 +6,6 @@ import OAuth from "../Components/OAuth/OAuth"
 const LoginPage = () => {
   return (
     <div className="LoginPage">
-      <Header />
       <div className="login-form-container">
         <header>
           <h2 className="heading">Login to your Account</h2>

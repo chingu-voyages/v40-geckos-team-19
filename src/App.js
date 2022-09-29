@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import VotingPage from "./pages/VotingPage.jsx";
-// import Header from "./Components/Header/Header";
+import Header from "./Components/Header/Header";
 import AuthContext from "./store/auth-context";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <Fragment>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" exact element={<HomePage />} />
         <Route path="/login" exact element={<LoginPage />} />
