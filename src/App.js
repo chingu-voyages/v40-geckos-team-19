@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import VotingPage from "./pages/VotingPage.jsx";
 import Header from "./Components/Header/Header";
+import NotFound from "./pages/NotFound";
 import AuthContext from "./store/auth-context";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/voting" exact element={<VotingPage />} />
         )}
         <Route path="/voting/:pageUrl" element={<VotingPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Fragment>
   );

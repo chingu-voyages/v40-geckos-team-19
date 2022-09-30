@@ -1,19 +1,20 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import AuthContext from "../../store/auth-context";
 import "./Header.css";
 
 const Header = () => {
   const authCtx = useContext(AuthContext);
+  const navigate = useNavigate();
 
   function handleLogout(event) {
     event.preventDefault();
     if (authCtx.isLoggedIn) {
       authCtx.logout();
-      window.location = "/";
+      navigate("/");
     } else {
-      window.location = "/login";
+      navigate("/login");
     }
   }
 
@@ -40,11 +41,11 @@ const Header = () => {
             <NavLink to="/">WeDesign</NavLink>
           </li>
           <li>
-            {authCtx.isLoggedIn && <button className="btn">
-              <NavLink to="/voting">
-                Create Poll
-              </NavLink>
-            </button>}
+            {authCtx.isLoggedIn && (
+              <button className="btn">
+                <NavLink to="/voting">Create Poll</NavLink>
+              </button>
+            )}
           </li>
         </nav>
       </div>
