@@ -47,7 +47,11 @@ const RegisterPageForm = () => {
       .then((response) => {
         if (response.ok) {
           return response.json().then((data) => {
-            authCtx.login(data.idToken);
+            const expirationTime = new Date(
+              new Date().getTime() + +data.expiresIn * 1000
+            );
+            //autologout after 1 hour
+            authCtx.login(data.idToken, expirationTime.toISOString());
             window.location = "/";
           });
         } else {
