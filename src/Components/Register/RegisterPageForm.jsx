@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 import "./RegisterPageForm.css";
 
@@ -7,6 +8,8 @@ const RegisterPageForm = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const navigate = useNavigate();
+  
   const authCtx = useContext(AuthContext);
 
   const samePasswords = password === confirmPassword;
@@ -47,8 +50,12 @@ const RegisterPageForm = () => {
       .then((response) => {
         if (response.ok) {
           return response.json().then((data) => {
-            authCtx.login(data.idToken);
-            window.location = "/voting";
+            const expirationTime = new Date(
+              new Date().getTime() + +data.expiresIn * 1000
+            );
+            //autologout after 1 hour
+            authCtx.login(data.idToken, expirationTime.toISOString());
+            navigate('/');
           });
         } else {
           return response.json().then((data) => {

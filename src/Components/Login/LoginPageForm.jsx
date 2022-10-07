@@ -1,10 +1,13 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 import "./LoginPageForm.css";
 
 const LoginPageForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const authCtx = useContext(AuthContext);
 
@@ -36,8 +39,12 @@ const LoginPageForm = () => {
       .then((response) => {
         if (response.ok) {
           return response.json().then((data) => {
-            authCtx.login(data.idToken);
-            window.location = "/voting";
+            const expirationTime = new Date(
+              new Date().getTime() + +data.expiresIn * 1000
+            );
+            //autologout after 1 hour
+            authCtx.login(data.idToken, expirationTime.toISOString());
+            navigate("/");
           });
         } else {
           return response.json().then((data) => {
